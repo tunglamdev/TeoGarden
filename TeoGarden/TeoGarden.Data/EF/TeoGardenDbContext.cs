@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TeoGarden.Data.Configurations;
+using TeoGarden.Data.Extensions;
 using TeoGarden.Data.Models;
 
 namespace TeoGarden.Data.EF
@@ -38,6 +39,16 @@ namespace TeoGarden.Data.EF
                 .ApplyConfiguration(new CategoryConfig())
                 .ApplyConfiguration(new FeedbackConfig())
                 .ApplyConfiguration(new StatusConfig());
+
+            // Data seeding in ModelBuilderExtenions
+            modelBuilder.FillDataVegetable();
+            modelBuilder.FillDataCategory();
+            modelBuilder.FillDataUser();
+            modelBuilder.FillDataCart();
+            modelBuilder.FillDataOrder();
+            modelBuilder.FillDataOrderDetail();
+            modelBuilder.FillDataStatus();
+            modelBuilder.FillDataFeedback();
         }
     }
 }
