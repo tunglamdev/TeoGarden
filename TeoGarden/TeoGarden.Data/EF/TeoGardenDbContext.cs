@@ -20,9 +20,7 @@ namespace TeoGarden.Data.EF
         DbSet<Feedback> Feedbacks { set; get; }
         DbSet<Status> Statuses { set; get; }
 
-        private const string connectionString = @"Data Source=TUNGLAM\\SQLEXPRESS;
-                                                Initial Catalog=TeoGarden;
-                                                Integrated Security=True";
+        private const string connectionString = "Data Source=TUNGLAM\\SQLEXPRESS; Initial Catalog=TeoGarden; Integrated Security=True";
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);

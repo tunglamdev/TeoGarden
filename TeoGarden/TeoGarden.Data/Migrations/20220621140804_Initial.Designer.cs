@@ -12,7 +12,7 @@ using TeoGarden.Data.EF;
 namespace TeoGarden.Data.Migrations
 {
     [DbContext(typeof(TeoGardenDbContext))]
-    [Migration("20220621140215_Initial")]
+    [Migration("20220621140804_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
