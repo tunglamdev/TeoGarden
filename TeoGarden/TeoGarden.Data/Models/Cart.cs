@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TeoGarden.Data.Models
 {
-    internal class Cart
+    public class Cart
     {
         public int UserId { get; set; }
         public User User { get; set; }

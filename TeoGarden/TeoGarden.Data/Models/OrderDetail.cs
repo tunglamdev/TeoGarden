@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TeoGarden.Data.Models
 {
-    internal class OrderDetail
+    public class OrderDetail
     {
         public int OrderId { get; set; }
         public Order Order { get; set; }
