@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "N3yBtfn7b3AZca+7qIhhgjgSuhpqUZkrYz2ON9fPRjI=",
+  "Source": "TeoGarden.BackendApi",
+  "BasePath": "_content/TeoGarden.BackendApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

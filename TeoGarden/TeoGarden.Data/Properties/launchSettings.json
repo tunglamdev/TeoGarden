@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "TeoGarden.Data": {
+      "commandName": "Project"
+    },
+    "Profile 1": {
+      "commandName": "Project"
+    }
+  }
+}
