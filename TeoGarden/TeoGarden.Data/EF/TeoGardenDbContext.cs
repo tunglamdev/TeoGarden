@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,25 +8,23 @@ using System.Threading.Tasks;
 using TeoGarden.Data.Configurations;
 using TeoGarden.Data.Extensions;
 using TeoGarden.Data.Models;
+using System.IO;
 
 namespace TeoGarden.Data.EF
 {
     public class TeoGardenDbContext : DbContext
     {
-        DbSet<Vegetable> Vegetables { set; get; }
-        DbSet<Category> Categories { set; get; }
-        DbSet<User> Users { set; get; }
-        DbSet<Order> Orders { set; get; }
-        DbSet<OrderDetail> OrderDetails { set; get; }
-        DbSet<Cart> Carts { set; get; }
-        DbSet<Feedback> Feedbacks { set; get; }
-        DbSet<Status> Statuses { set; get; }
-
-        private const string connectionString = "Data Source=TUNGLAM\\SQLEXPRESS; Initial Catalog=TeoGarden; Integrated Security=True";
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public DbSet<Vegetable> Vegetables { set; get; }
+        public DbSet<Category> Categories { set; get; }
+        public DbSet<User> Users { set; get; }
+        public DbSet<Order> Orders { set; get; }
+        public DbSet<OrderDetail> OrderDetails { set; get; }
+        public DbSet<Cart> Carts { set; get; }
+        public DbSet<Feedback> Feedbacks { set; get; }
+        public DbSet<Status> Statuses { set; get; }
+        public TeoGardenDbContext(DbContextOptions<TeoGardenDbContext> options)
+            : base(options)
         {
-            base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer(connectionString);
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
