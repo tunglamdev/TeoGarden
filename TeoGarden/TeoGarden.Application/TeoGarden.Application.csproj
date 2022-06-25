@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TeoGarden.Data\TeoGarden.Data.csproj" />
+    <ProjectReference Include="..\TeoGarden.ShareModel\TeoGarden.ShareModel.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,7 +1,9 @@
-﻿namespace TeoGarden.Application.Interfaces
+﻿using TeoGarden.ShareModel.ViewModels;
+
+namespace TeoGarden.Application.Interfaces
 {
-    public class ICategoryService
+    public interface ICategoryService
     {
-        Task<List<CategoryViewModel>> GetAllAsync();
+        public Task<List<CategoryViewModel>> GetAllAsync();
     }
 }

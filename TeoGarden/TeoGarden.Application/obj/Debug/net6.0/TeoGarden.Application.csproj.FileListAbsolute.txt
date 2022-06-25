@@ -1,0 +1,17 @@
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.Application\obj\Debug\net6.0\TeoGarden.Application.csproj.AssemblyReference.cache
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.Application\obj\Debug\net6.0\TeoGarden.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.Application\obj\Debug\net6.0\TeoGarden.Application.AssemblyInfoInputs.cache
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.Application\obj\Debug\net6.0\TeoGarden.Application.AssemblyInfo.cs
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.Application\obj\Debug\net6.0\TeoGarden.Application.csproj.CoreCompileInputs.cache
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.Application\bin\Debug\net6.0\TeoGarden.Application.deps.json
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.Application\bin\Debug\net6.0\TeoGarden.Application.dll
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.Application\bin\Debug\net6.0\TeoGarden.Application.pdb
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.Application\bin\Debug\net6.0\TeoGarden.Data.dll
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.Application\bin\Debug\net6.0\TeoGarden.ShareModel.dll
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.Application\bin\Debug\net6.0\TeoGarden.Data.pdb
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.Application\bin\Debug\net6.0\TeoGarden.ShareModel.pdb
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.Application\obj\Debug\net6.0\TeoGarden.Application.csproj.CopyComplete
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.Application\obj\Debug\net6.0\TeoGarden.Application.dll
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.Application\obj\Debug\net6.0\refint\TeoGarden.Application.dll
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.Application\obj\Debug\net6.0\TeoGarden.Application.pdb
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.Application\obj\Debug\net6.0\ref\TeoGarden.Application.dll

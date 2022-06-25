@@ -1,0 +1,12 @@
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.ShareModel\bin\Debug\net6.0\TeoGarden.ShareModel.deps.json
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.ShareModel\bin\Debug\net6.0\TeoGarden.ShareModel.dll
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.ShareModel\bin\Debug\net6.0\TeoGarden.ShareModel.pdb
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.ShareModel\obj\Debug\net6.0\TeoGarden.ShareModel.csproj.AssemblyReference.cache
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.ShareModel\obj\Debug\net6.0\TeoGarden.ShareModel.GeneratedMSBuildEditorConfig.editorconfig
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.ShareModel\obj\Debug\net6.0\TeoGarden.ShareModel.AssemblyInfoInputs.cache
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.ShareModel\obj\Debug\net6.0\TeoGarden.ShareModel.AssemblyInfo.cs
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.ShareModel\obj\Debug\net6.0\TeoGarden.ShareModel.csproj.CoreCompileInputs.cache
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.ShareModel\obj\Debug\net6.0\TeoGarden.ShareModel.dll
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.ShareModel\obj\Debug\net6.0\refint\TeoGarden.ShareModel.dll
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.ShareModel\obj\Debug\net6.0\TeoGarden.ShareModel.pdb
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.ShareModel\obj\Debug\net6.0\ref\TeoGarden.ShareModel.dll

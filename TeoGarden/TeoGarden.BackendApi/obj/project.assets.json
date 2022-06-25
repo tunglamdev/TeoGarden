@@ -817,6 +817,20 @@
           }
         }
       },
+      "TeoGarden.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "TeoGarden.Data": "1.0.0",
+          "TeoGarden.ShareModel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TeoGarden.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TeoGarden.Application.dll": {}
+        }
+      },
       "TeoGarden.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -833,6 +847,16 @@
         },
         "runtime": {
           "bin/placeholder/TeoGarden.Data.dll": {}
+        }
+      },
+      "TeoGarden.ShareModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/TeoGarden.ShareModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TeoGarden.ShareModel.dll": {}
         }
       }
     }
@@ -2327,10 +2351,20 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "TeoGarden.Application/1.0.0": {
+      "type": "project",
+      "path": "../TeoGarden.Application/TeoGarden.Application.csproj",
+      "msbuildProject": "../TeoGarden.Application/TeoGarden.Application.csproj"
+    },
     "TeoGarden.Data/1.0.0": {
       "type": "project",
       "path": "../TeoGarden.Data/TeoGarden.Data.csproj",
       "msbuildProject": "../TeoGarden.Data/TeoGarden.Data.csproj"
+    },
+    "TeoGarden.ShareModel/1.0.0": {
+      "type": "project",
+      "path": "../TeoGarden.ShareModel/TeoGarden.ShareModel.csproj",
+      "msbuildProject": "../TeoGarden.ShareModel/TeoGarden.ShareModel.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2340,6 +2374,7 @@
       "Microsoft.Extensions.Configuration.Json >= 6.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3",
       "System.Configuration.ConfigurationManager >= 6.0.0",
+      "TeoGarden.Application >= 1.0.0",
       "TeoGarden.Data >= 1.0.0"
     ]
   },
@@ -2370,6 +2405,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "D:\\ROOKIES\\code\\TeoGarden\\TeoGarden\\TeoGarden.Application\\TeoGarden.Application.csproj": {
+              "projectPath": "D:\\ROOKIES\\code\\TeoGarden\\TeoGarden\\TeoGarden.Application\\TeoGarden.Application.csproj"
+            },
             "D:\\ROOKIES\\code\\TeoGarden\\TeoGarden\\TeoGarden.Data\\TeoGarden.Data.csproj": {
               "projectPath": "D:\\ROOKIES\\code\\TeoGarden\\TeoGarden\\TeoGarden.Data\\TeoGarden.Data.csproj"
             }

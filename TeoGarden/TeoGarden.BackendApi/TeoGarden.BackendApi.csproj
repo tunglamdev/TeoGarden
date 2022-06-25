@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TeoGarden.Application\TeoGarden.Application.csproj" />
     <ProjectReference Include="..\TeoGarden.Data\TeoGarden.Data.csproj" />
   </ItemGroup>
 

@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using TeoGarden.Application.Interfaces;
 using TeoGarden.Data.EF;
 
 namespace TeoGarden.BackendApi.Controllers
@@ -8,16 +10,17 @@ namespace TeoGarden.BackendApi.Controllers
     [ApiController]
     public class VegetablesController : ControllerBase
     {
-        private readonly TeoGardenDbContext _context;
-        public VegetablesController(TeoGardenDbContext context)
+        private readonly IVegetableService _vegetableService;
+        public VegetablesController(IVegetableService vegetableService)
         {
-            _context = context;
+            _vegetableService = vegetableService;
         }
 
         [HttpGet]
-        public IActionResult Get()
+        [AllowAnonymous]
+        public async Task<IActionResult> Get()
         {
-            var vegetables = _context.Vegetables.ToList();
+            var vegetables = await _vegetableService.GetAllAsync();
             return Ok(vegetables);
         }
     }

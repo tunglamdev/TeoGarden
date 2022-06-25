@@ -13,6 +13,7 @@
           "Microsoft.Extensions.Configuration.Json": "6.0.0",
           "Swashbuckle.AspNetCore": "6.2.3",
           "System.Configuration.ConfigurationManager": "6.0.0",
+          "TeoGarden.Application": "1.0.0",
           "TeoGarden.Data": "1.0.0"
         },
         "runtime": {
@@ -514,6 +515,15 @@
           }
         }
       },
+      "TeoGarden.Application/1.0.0": {
+        "dependencies": {
+          "TeoGarden.Data": "1.0.0",
+          "TeoGarden.ShareModel": "1.0.0"
+        },
+        "runtime": {
+          "TeoGarden.Application.dll": {}
+        }
+      },
       "TeoGarden.Data/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.6",
@@ -525,6 +535,11 @@
         },
         "runtime": {
           "TeoGarden.Data.dll": {}
+        }
+      },
+      "TeoGarden.ShareModel/1.0.0": {
+        "runtime": {
+          "TeoGarden.ShareModel.dll": {}
         }
       }
     }
@@ -920,7 +935,17 @@
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
+    "TeoGarden.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "TeoGarden.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TeoGarden.ShareModel/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

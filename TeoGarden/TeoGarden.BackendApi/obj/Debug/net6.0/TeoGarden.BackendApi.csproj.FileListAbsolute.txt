@@ -14,7 +14,6 @@ D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.BackendApi\obj\Debug\net6.0\TeoGar
 D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.BackendApi\obj\Debug\net6.0\TeoGarden.BackendApi.AssemblyInfoInputs.cache
 D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.BackendApi\obj\Debug\net6.0\TeoGarden.BackendApi.AssemblyInfo.cs
 D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.BackendApi\obj\Debug\net6.0\TeoGarden.BackendApi.csproj.CoreCompileInputs.cache
-D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.BackendApi\obj\Debug\net6.0\TeoGarden.BackendApi.MvcApplicationPartsAssemblyInfo.cs
 D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.BackendApi\obj\Debug\net6.0\TeoGarden.BackendApi.MvcApplicationPartsAssemblyInfo.cache
 D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.BackendApi\obj\Debug\net6.0\staticwebassets.build.json
 D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.BackendApi\obj\Debug\net6.0\staticwebassets.development.json
@@ -61,3 +60,7 @@ D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.BackendApi\bin\Debug\net6.0\runtim
 D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.BackendApi\bin\Debug\net6.0\TeoGarden.Data.dll
 D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.BackendApi\bin\Debug\net6.0\TeoGarden.Data.pdb
 D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.BackendApi\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.BackendApi\bin\Debug\net6.0\TeoGarden.Application.dll
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.BackendApi\bin\Debug\net6.0\TeoGarden.ShareModel.dll
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.BackendApi\bin\Debug\net6.0\TeoGarden.Application.pdb
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.BackendApi\bin\Debug\net6.0\TeoGarden.ShareModel.pdb
