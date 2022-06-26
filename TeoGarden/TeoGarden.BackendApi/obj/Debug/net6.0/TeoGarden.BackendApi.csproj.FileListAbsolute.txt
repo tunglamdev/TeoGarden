@@ -64,3 +64,4 @@ D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.BackendApi\bin\Debug\net6.0\TeoGar
 D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.BackendApi\bin\Debug\net6.0\TeoGarden.ShareModel.dll
 D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.BackendApi\bin\Debug\net6.0\TeoGarden.Application.pdb
 D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.BackendApi\bin\Debug\net6.0\TeoGarden.ShareModel.pdb
+D:\ROOKIES\code\TeoGarden\TeoGarden\TeoGarden.BackendApi\obj\Debug\net6.0\TeoGarden.BackendApi.MvcApplicationPartsAssemblyInfo.cs
