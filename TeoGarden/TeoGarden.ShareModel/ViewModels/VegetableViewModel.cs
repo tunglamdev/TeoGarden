@@ -15,7 +15,6 @@ namespace TeoGarden.ShareModel.ViewModels
         public string Image { get; set; }
         public int Sale { get; set; }
         public int CategoryId { get; set; }
-        public string CategoryName { get; set; }
         public string Location { get; set; }
     }
 }
