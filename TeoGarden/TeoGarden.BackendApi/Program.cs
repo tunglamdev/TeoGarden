@@ -36,6 +36,8 @@ builder.Services.AddSwaggerGen(c =>
 //Declare DI
 builder.Services.AddTransient<ICategoryService, CategoryService>(); 
 builder.Services.AddTransient<IVegetableService, VegetableService>();
+builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<IFeedbackService, FeedbackService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
