@@ -13,8 +13,10 @@ namespace TeoGarden.ShareModel.ViewModels
         public int Weight { get; set; }
         public int Price { get; set; }
         public string Image { get; set; }
-        public int Sale { get; set; }
+        public bool IsSale { get; set; }
         public int CategoryId { get; set; }
         public string Location { get; set; }
+        public DateTime? CreatedDate { get; set; }
+        public DateTime? UpdatedDate { get; set; }
     }
 }

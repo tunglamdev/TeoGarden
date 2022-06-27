@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TeoGarden.ShareModel.ViewModels
+namespace TeoGarden.ShareModel.Requests.User
 {
-    public class UserViewModel
+    public class UserUpdateRequest
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -14,7 +14,5 @@ namespace TeoGarden.ShareModel.ViewModels
         public string Email { get; set; }
         public string Address { get; set; }
         public string Avatar { get; set; }
-        public DateTime? RegisteredDate { get; set; }
-        public DateTime? UpdatedDate { get; set; }
     }
 }
