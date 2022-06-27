@@ -23,7 +23,8 @@ namespace TeoGarden.Application.Services
 
         public async Task<List<VegetableViewModel>> GetAllAsync()
         {
-            return await _context.Vegetables.Select(vegetable => new VegetableViewModel()
+            return await _context.Vegetables.Where(vegetable => vegetable.IsDeleted==false)
+                                            .Select(vegetable => new VegetableViewModel()
             {
                 Id = vegetable.Id,
                 Name = vegetable.Name,
@@ -32,13 +33,16 @@ namespace TeoGarden.Application.Services
                 Image = vegetable.Image,
                 IsSale = vegetable.IsSale,
                 Location = vegetable.Location,
-                CategoryId = vegetable.CategoryId
+                CategoryId = vegetable.CategoryId,
+                CreatedDate = vegetable.CreatedDate,
+                UpdatedDate = vegetable.UpdatedDate
             }).ToListAsync();
         }
 
         public async Task<VegetableViewModel> GetByIdAsync(int Id)
         {
-            var vegetable = await _context.Vegetables.Where(vegetable => vegetable.Id==Id).FirstOrDefaultAsync();
+            var vegetable = await _context.Vegetables.Where(vegetable => vegetable.Id==Id && vegetable.IsDeleted == false)
+                                                        .FirstOrDefaultAsync();
             if (vegetable == null)
             {
                 return null;
@@ -52,12 +56,18 @@ namespace TeoGarden.Application.Services
                 Image = vegetable.Image,
                 IsSale = vegetable.IsSale,
                 Location = vegetable.Location,
-                CategoryId = vegetable.CategoryId
+                CategoryId = vegetable.CategoryId,
+                CreatedDate = vegetable.CreatedDate,
+                UpdatedDate = vegetable.UpdatedDate
             };
         }
 
         public async Task<int> CreateAsync(VegetableCreateRequest request)
         {
+            if (request == null)
+            {
+                return 0;
+            }
             var vegetable = new Vegetable()
             {
                 Name = request.Name,
@@ -78,6 +88,10 @@ namespace TeoGarden.Application.Services
 
         public async Task<int> UpdateAsync(VegetableUpdateRequest request)
         {
+            if (request == null)
+            {
+                return 0;
+            }
             var vegetable = await _context.Vegetables.FindAsync(request.Id);
             if(vegetable == null || request.IsDeleted==true)
             {

@@ -27,7 +27,9 @@ namespace TeoGarden.Application.Services
             {
                 Id = category.Id,
                 Name = category.Name,
-                Image = category.Image
+                Image = category.Image,
+                CreatedDate = category.CreatedDate,
+                UpdatedDate = category.UpdatedDate
             }).ToListAsync();
         }
 
@@ -42,7 +44,9 @@ namespace TeoGarden.Application.Services
             {
                 Id = category.Id,
                 Name = category.Name,
-                Image = category.Image
+                Image = category.Image,
+                CreatedDate = category.CreatedDate,
+                UpdatedDate = category.UpdatedDate
             };
         }
 
@@ -68,6 +72,10 @@ namespace TeoGarden.Application.Services
 
         public async Task<int> UpdateAsync(CategoryUpdateRequest request)
         {
+            if (request == null)
+            {
+                return 0;
+            }
             var category = await _context.Categories.FindAsync(request.Id);
             if (category == null || request.IsDeleted == true)
             {

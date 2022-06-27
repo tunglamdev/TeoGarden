@@ -23,7 +23,7 @@ namespace TeoGarden.Application.Services
 
         public async Task<List<FeedbackViewModel>> GetAllAsync()
         {
-            return await _context.Feedbacks.Select(feedback => new FeedbackViewModel()
+            return await _context.Feedbacks.Where(feedback=>feedback.IsDeleted==false).Select(feedback => new FeedbackViewModel()
             {
                 Id = feedback.Id,
                 UserId = feedback.UserId,
@@ -36,7 +36,8 @@ namespace TeoGarden.Application.Services
 
         public async Task<FeedbackViewModel> GetByIdAsync(int Id)
         {
-            var feedback = await _context.Feedbacks.Where(feedback => feedback.Id == Id).FirstOrDefaultAsync();
+            var feedback = await _context.Feedbacks.Where(feedback => feedback.Id == Id && feedback.IsDeleted == false)
+                                                    .FirstOrDefaultAsync();
             if(feedback == null)
             {
                 return null;
@@ -54,7 +55,8 @@ namespace TeoGarden.Application.Services
 
         public async Task<List<FeedbackViewModel>> GetByUserIdAsync(int Id)
         {
-            return await _context.Feedbacks.Where(feedback => feedback.UserId == Id).Select(feedback => new FeedbackViewModel()
+            return await _context.Feedbacks.Where(feedback => feedback.UserId == Id && feedback.IsDeleted == false)
+                                            .Select(feedback => new FeedbackViewModel()
             {
                 Id = feedback.Id,
                 UserId = feedback.UserId,
@@ -67,7 +69,8 @@ namespace TeoGarden.Application.Services
 
         public async Task<List<FeedbackViewModel>> GetByVegetableIdAsync(int Id)
         {
-            return await _context.Feedbacks.Where(feedback => feedback.VegetableId == Id).Select(feedback => new FeedbackViewModel()
+            return await _context.Feedbacks.Where(feedback => feedback.VegetableId == Id && feedback.IsDeleted == false)
+                                            .Select(feedback => new FeedbackViewModel()
             {
                 Id = feedback.Id,
                 UserId = feedback.UserId,
@@ -80,13 +83,16 @@ namespace TeoGarden.Application.Services
 
         public async Task<int> CreateAsync(FeedbackCreateRequest request)
         {
+            if (request == null)
+            {
+                return 0;
+            }
             var feedback = new Feedback()
             {
                 UserId = request.UserId,
                 VegetableId = request.VegetableId,
                 Comment = request.Comment,
-                Vote = request.Vote,
-                FeedbackTime = DateTime.Now
+                Vote = request.Vote
             };
 
             await _context.Feedbacks.AddAsync(feedback);
@@ -100,6 +106,10 @@ namespace TeoGarden.Application.Services
 
         public async Task<int> UpdateAsync(FeedbackUpdateRequest request)
         {
+            if (request == null)
+            {
+                return 0;
+            }
             var feedback = await _context.Feedbacks.FindAsync(request.Id);
             if(feedback == null || request.IsDeleted==false)
             {

@@ -99,6 +99,10 @@ namespace TeoGarden.Application.Services
 
         public async Task<int> UpdateInformationAsync(UserUpdateRequest request)
         {
+            if (request == null)
+            {
+                return 0;
+            }
             var user = await _context.Users.FindAsync(request.Id);
             if(user == null || user.IsBlocked == true)
             {
