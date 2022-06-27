@@ -111,7 +111,7 @@ namespace TeoGarden.Application.Services
                 return 0;
             }
             var feedback = await _context.Feedbacks.FindAsync(request.Id);
-            if(feedback == null || request.IsDeleted==false)
+            if(feedback == null || feedback.IsDeleted==false)
             {
                 return 0;
             }

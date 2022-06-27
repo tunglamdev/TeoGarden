@@ -93,7 +93,7 @@ namespace TeoGarden.Application.Services
                 return 0;
             }
             var vegetable = await _context.Vegetables.FindAsync(request.Id);
-            if(vegetable == null || request.IsDeleted==true)
+            if(vegetable == null || vegetable.IsDeleted==true)
             {
                 return 0;
             }

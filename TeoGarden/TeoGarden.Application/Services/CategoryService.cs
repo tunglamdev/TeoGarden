@@ -77,7 +77,7 @@ namespace TeoGarden.Application.Services
                 return 0;
             }
             var category = await _context.Categories.FindAsync(request.Id);
-            if (category == null || request.IsDeleted == true)
+            if (category == null || category.IsDeleted == true)
             {
                 return 0;
             }
