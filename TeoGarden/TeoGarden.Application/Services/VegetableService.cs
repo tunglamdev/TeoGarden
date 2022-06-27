@@ -88,6 +88,7 @@ namespace TeoGarden.Application.Services
             vegetable.Weight = request.Weight;
             vegetable.Location = request.Location;
             vegetable.CategoryId = request.CategoryId;
+            vegetable.UpdatedDate = DateTime.Now;
             return await _context.SaveChangesAsync();
         }
 
@@ -100,6 +101,7 @@ namespace TeoGarden.Application.Services
                 return 0;
             }
             vegetable.IsDeleted = true;
+            vegetable.UpdatedDate = DateTime.Now;
             return await _context.SaveChangesAsync();
         }
     }
