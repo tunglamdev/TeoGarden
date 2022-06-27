@@ -30,6 +30,7 @@ namespace TeoGarden.Application.Services
                 Price = vegetable.Price,
                 Weight = vegetable.Weight,
                 Image = vegetable.Image,
+                IsSale = vegetable.IsSale,
                 Location = vegetable.Location,
                 CategoryId = vegetable.CategoryId
             }).ToListAsync();
@@ -38,6 +39,10 @@ namespace TeoGarden.Application.Services
         public async Task<VegetableViewModel> GetByIdAsync(int Id)
         {
             var vegetable = await _context.Vegetables.Where(vegetable => vegetable.Id==Id).FirstOrDefaultAsync();
+            if (vegetable == null)
+            {
+                return null;
+            }
             return new VegetableViewModel()
             {
                 Id = vegetable.Id,
@@ -45,7 +50,7 @@ namespace TeoGarden.Application.Services
                 Price  = vegetable.Price,
                 Weight = vegetable.Weight,
                 Image = vegetable.Image,
-                Sale = vegetable.Sale,
+                IsSale = vegetable.IsSale,
                 Location = vegetable.Location,
                 CategoryId = vegetable.CategoryId
             };
@@ -63,12 +68,21 @@ namespace TeoGarden.Application.Services
                 CategoryId = request.CategoryId
             };
             await _context.Vegetables.AddAsync(vegetable);
-            await _context.SaveChangesAsync();
+            var result = await _context.SaveChangesAsync();
+            if (result == 0)
+            {
+                return 0;
+            }
             return vegetable.Id;
         }
+
         public async Task<int> UpdateAsync(VegetableUpdateRequest request)
         {
             var vegetable = await _context.Vegetables.FindAsync(request.Id);
+            if(vegetable == null || request.IsDeleted==true)
+            {
+                return 0;
+            }
             vegetable.Name = request.Name;
             vegetable.Price = request.Price;
             vegetable.Weight = request.Weight;
@@ -76,11 +90,17 @@ namespace TeoGarden.Application.Services
             vegetable.CategoryId = request.CategoryId;
             return await _context.SaveChangesAsync();
         }
-        //public async Task<int> DeleteAsync(int Id)
-        //{
-        //    var vegetable = await _context.Vegetables.Where(vegetable => vegetable.Id == Id);
-        //    await _context.Vegetables.Remove(vegetable);
-        //    return await _context.SaveChangesAsync();
-        //}
+
+        public async Task<int> DeleteAsync(int Id)
+        {
+            var vegetable = await _context.Vegetables.Where(vegetable => vegetable.Id==Id && vegetable.IsDeleted==false)
+                                                        .FirstOrDefaultAsync();
+            if (vegetable == null)
+            {
+                return 0;
+            }
+            vegetable.IsDeleted = true;
+            return await _context.SaveChangesAsync();
+        }
     }
 }

@@ -9,6 +9,6 @@ namespace TeoGarden.Application.Interfaces
         public Task<CategoryViewModel> GetByIdAsync(int Id);
         public Task<int> CreateAsync(CategoryCreateRequest request);
         public Task<int> UpdateAsync(CategoryUpdateRequest request);
-        //public Task<int> DeleteAsync(int Id);
+        public Task<int> DeleteAsync(int Id);
     }
 }

@@ -15,23 +15,29 @@ namespace TeoGarden.Application.Services
     public class CategoryService : ICategoryService
     {
         private readonly TeoGardenDbContext _context;
+
         public CategoryService(TeoGardenDbContext context)
         {
             _context = context;
         }
-        
+
         public async Task<List<CategoryViewModel>> GetAllAsync()
         {
-            return await _context.Categories.Select(category => new CategoryViewModel()
+            return await _context.Categories.Where(category => category.IsDeleted==false).Select(category => new CategoryViewModel()
             {
                 Id = category.Id,
                 Name = category.Name,
                 Image = category.Image
             }).ToListAsync();
         }
+
         public async Task<CategoryViewModel> GetByIdAsync(int Id)
         {
-            var category = await _context.Categories.Where(category => category.Id == Id).FirstOrDefaultAsync();
+            var category = await _context.Categories.Where(category => category.Id == Id && category.IsDeleted == false).FirstOrDefaultAsync();
+            if (category == null)
+            {
+                return null;
+            }
             return new CategoryViewModel()
             {
                 Id = category.Id,
@@ -39,30 +45,51 @@ namespace TeoGarden.Application.Services
                 Image = category.Image
             };
         }
+
         public async Task<int> CreateAsync(CategoryCreateRequest request)
         {
+            if (request == null)
+            {
+                return 0;
+            }
             var category = new Category()
             {
                 Name = request.Name,
                 Image = request.Image
             };
             await _context.Categories.AddAsync(category);
-            await _context.SaveChangesAsync();
+            var result = await _context.SaveChangesAsync();
+            if (result!=1)
+            {
+                return 0;
+            }
             return category.Id;
         }
+
         public async Task<int> UpdateAsync(CategoryUpdateRequest request)
         {
             var category = await _context.Categories.FindAsync(request.Id);
+            if (category == null || request.IsDeleted == true)
+            {
+                return 0;
+            }
             category.Name = request.Name;
             category.Image = request.Image;
+            category.UpdatedDate = DateTime.Now;
             return await _context.SaveChangesAsync();
         }
 
-        //public async Task<int> DeleteAsync(int Id)
-        //{
-        //    var category = _context.Categories.Where(category => category.Id == Id).FirstOrDefaultAsync();
-        //    _context.Categories.Remove(category);
-        //    return await _context.SaveChangesAsync();
-        //}
+        public async Task<int> DeleteAsync(int Id)
+        {
+            var category = await _context.Categories.Where(category => category.Id == Id && category.IsDeleted == false)
+                                                    .FirstOrDefaultAsync();
+            if(category == null)
+            {
+                return 0;
+            }
+            category.IsDeleted = true;
+            category.UpdatedDate = DateTime.Now;
+            return await _context.SaveChangesAsync();
+        }
     }
 }

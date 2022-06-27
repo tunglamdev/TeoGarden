@@ -14,6 +14,6 @@ namespace TeoGarden.Application.Interfaces
         Task<VegetableViewModel> GetByIdAsync(int Id);
         Task<int> CreateAsync(VegetableCreateRequest request);
         Task<int> UpdateAsync(VegetableUpdateRequest request);
-        //Task<int> DeleteAsync(int Id);
+        Task<int> DeleteAsync(int Id);
     }
 }

@@ -15,6 +15,7 @@ namespace TeoGarden.Application.Services
     public class FeedbackService : IFeedbackService
     {
         private readonly TeoGardenDbContext _context;
+
         public FeedbackService(TeoGardenDbContext context)
         {
             _context = context;
@@ -32,9 +33,14 @@ namespace TeoGarden.Application.Services
                 FeedbackTime = feedback.FeedbackTime
             }).ToListAsync();
         }
+
         public async Task<FeedbackViewModel> GetByIdAsync(int Id)
         {
             var feedback = await _context.Feedbacks.Where(feedback => feedback.Id == Id).FirstOrDefaultAsync();
+            if(feedback == null)
+            {
+                return null;
+            }
             return new FeedbackViewModel()
             {
                 Id = feedback.Id,
@@ -45,6 +51,7 @@ namespace TeoGarden.Application.Services
                 FeedbackTime = feedback.FeedbackTime
             };
         }
+
         public async Task<List<FeedbackViewModel>> GetByUserIdAsync(int Id)
         {
             return await _context.Feedbacks.Where(feedback => feedback.UserId == Id).Select(feedback => new FeedbackViewModel()
@@ -57,6 +64,7 @@ namespace TeoGarden.Application.Services
                 FeedbackTime = feedback.FeedbackTime
             }).ToListAsync();
         }
+
         public async Task<List<FeedbackViewModel>> GetByVegetableIdAsync(int Id)
         {
             return await _context.Feedbacks.Where(feedback => feedback.VegetableId == Id).Select(feedback => new FeedbackViewModel()
@@ -69,6 +77,7 @@ namespace TeoGarden.Application.Services
                 FeedbackTime = feedback.FeedbackTime
             }).ToListAsync();
         }
+
         public async Task<int> CreateAsync(FeedbackCreateRequest request)
         {
             var feedback = new Feedback()
@@ -76,25 +85,42 @@ namespace TeoGarden.Application.Services
                 UserId = request.UserId,
                 VegetableId = request.VegetableId,
                 Comment = request.Comment,
-                Vote = request.Vote
+                Vote = request.Vote,
+                FeedbackTime = DateTime.Now
             };
 
             await _context.Feedbacks.AddAsync(feedback);
-            await _context.SaveChangesAsync();
+            var result = await _context.SaveChangesAsync();
+            if (result == 0)
+            {
+                return 0;
+            }
             return feedback.Id;
         }
+
         public async Task<int> UpdateAsync(FeedbackUpdateRequest request)
         {
             var feedback = await _context.Feedbacks.FindAsync(request.Id);
+            if(feedback == null || request.IsDeleted==false)
+            {
+                return 0;
+            }
             feedback.Comment = request.Comment;
             feedback.Vote = request.Vote;
+            feedback.FeedbackTime = DateTime.Now;
             return await _context.SaveChangesAsync();
         }
-        //public async Task<int> DeleteAsync(int Id)
-        //{
-        //    var feedback = await _context.Feedbacks.Where(feedback => feedback.Id==Id);
-        //    await _context.Feedbacks.Remove(feedback);
-        //    return await _context.SaveChangesAsync();
-        //}
+
+        public async Task<int> DeleteAsync(int Id)
+        {
+            var feedback = await _context.Feedbacks.Where(feedback => feedback.Id == Id && feedback.IsDeleted==false)
+                                                    .FirstOrDefaultAsync();
+            if(feedback == null)
+            {
+                return 0;
+            }
+            feedback.IsDeleted = true;
+            return await _context.SaveChangesAsync();
+        }
     }
 }
