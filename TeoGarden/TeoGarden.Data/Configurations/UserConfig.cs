@@ -18,8 +18,11 @@ namespace TeoGarden.Data.Configurations
             builder.Property(x => x.Email).IsRequired();
             builder.Property(x => x.Address).IsRequired();
             builder.Property(x => x.Avatar).HasDefaultValue("default.png");
-            builder.Property(x => x.Role).HasDefaultValue(0);
+            builder.Property(x => x.IsAdmin).HasDefaultValue(false);
             builder.Property(x => x.Password).IsRequired();
+            builder.Property(x => x.CreatedDate).IsRequired(false);
+            builder.Property(x => x.UpdatedDate).IsRequired(false);
+            builder.Property(x => x.IsBlocked).HasDefaultValue(false);
         }
     }
 }

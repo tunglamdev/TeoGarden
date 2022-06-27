@@ -22,7 +22,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "1.jpg",
                     CategoryId = 1,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -33,7 +34,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "2.jpg",
                     CategoryId = 1,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -44,7 +46,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "3.jpg",
                     CategoryId = 1,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -55,7 +58,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "4.jpg",
                     CategoryId = 1,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -66,7 +70,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "5.jpg",
                     CategoryId = 3,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -77,7 +82,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "6.jpg",
                     CategoryId = 3,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -88,7 +94,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "8.jpg",
                     CategoryId = 3,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -99,7 +106,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "8.jpg",
                     CategoryId = 3,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -110,7 +118,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "9.jpg",
                     CategoryId = 3,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -121,7 +130,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "10.jpg",
                     CategoryId = 5,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -132,7 +142,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "11.jpg",
                     CategoryId = 5,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -143,7 +154,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "12.jpg",
                     CategoryId = 5,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -154,7 +166,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "13.jpg",
                     CategoryId = 5,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -165,7 +178,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "14.jpg",
                     CategoryId = 3,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -176,7 +190,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "15.jpg",
                     CategoryId = 3,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -187,7 +202,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "6.jpg",
                     CategoryId = 2,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -198,7 +214,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "17.jpg",
                     CategoryId = 3,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -209,7 +226,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "18.jpg",
                     CategoryId = 1,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -220,7 +238,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "19.jpg",
                     CategoryId = 1,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -231,7 +250,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "20.jpg",
                     CategoryId = 1,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -242,7 +262,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "21.jpg",
                     CategoryId = 1,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -253,7 +274,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "22.jpg",
                     CategoryId = 1,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -264,7 +286,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "23.jpg",
                     CategoryId = 1,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -275,7 +298,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "24.jpg",
                     CategoryId = 1,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -286,7 +310,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "25.jpg",
                     CategoryId = 1,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -297,7 +322,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "26.jpg",
                     CategoryId = 1,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -308,7 +334,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "27.jpg",
                     CategoryId = 1,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -319,7 +346,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "28.jpg",
                     CategoryId = 1,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -330,7 +358,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "29.jpg",
                     CategoryId = 1,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -341,7 +370,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "30.jpg",
                     CategoryId = 1,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -352,7 +382,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "31.jpg",
                     CategoryId = 3,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -363,7 +394,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "32.jpg",
                     CategoryId = 2,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -374,7 +406,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "33.jpg",
                     CategoryId = 2,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -385,7 +418,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "34.jpg",
                     CategoryId = 3,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -396,7 +430,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "35.jpg",
                     CategoryId = 1,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -407,7 +442,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "36.jpg",
                     CategoryId = 1,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -418,7 +454,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "37.jpg",
                     CategoryId = 1,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -429,7 +466,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "38.jpg",
                     CategoryId = 1,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -440,7 +478,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "39.jpg",
                     CategoryId = 1,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new Vegetable()
                 {
@@ -451,7 +490,8 @@ namespace TeoGarden.Data.Extensions
                     Image = "40.jpg",
                     CategoryId = 3,
                     Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
-                    Sale = 0
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 }
             );
 

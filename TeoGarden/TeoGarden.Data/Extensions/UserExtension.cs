@@ -21,8 +21,9 @@ namespace TeoGarden.Data.Extensions
                     Phone = "0338307449",
                     Address = "Cộng Hòa, Q.Tân Bình, TP.HCM",
                     Avatar = "lam.jpg",
-                    Role = 0,
-                    Password = "12345"
+                    Password = "12345",
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new User()
                 {
@@ -32,19 +33,22 @@ namespace TeoGarden.Data.Extensions
                     Phone = "0338307449",
                     Address = "Phan Đăng Lưu, Q.Phú Nhuận, TP.HCM",
                     Avatar = "an.jpg",
-                    Role = 0,
-                    Password = "12345"
+                    Password = "12345",
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
                 },
                 new User()
                 {
                     Id = 3,
-                    Name = "Jonson Admin",
+                    Name = "John",
                     Email = "admin@gmail.com",
                     Phone = "0338307449",
                     Address = "Califonia, Hoa Kỳ",
                     Avatar = "admin.jpg",
-                    Role = 1,
-                    Password = "12345"
+                    Password = "12345",
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now,
+                    IsAdmin = true
                 }
             );
         }

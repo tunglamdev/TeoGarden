@@ -14,8 +14,11 @@ namespace TeoGarden.Data.Models
         public string Email { get; set; }
         public string Address { get; set; }
         public string Avatar { get; set; }
-        public int Role { get; set; }
+        public bool IsAdmin { get; set; }
         public string Password { get; set; }
         public List<Order> Orders { get; set; }
+        public DateTime? CreatedDate { get; set; }
+        public DateTime? UpdatedDate { get; set; }
+        public bool IsBlocked { get; set; }
     }
 }

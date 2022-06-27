@@ -16,5 +16,6 @@ namespace TeoGarden.Data.Models
         public string Comment { get; set; }
         public int Vote { get; set; }
         public DateTime? FeedbackTime { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }

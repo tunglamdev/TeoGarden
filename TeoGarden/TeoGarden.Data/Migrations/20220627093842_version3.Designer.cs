@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TeoGarden.Data.EF;
 
@@ -11,9 +12,10 @@ using TeoGarden.Data.EF;
 namespace TeoGarden.Data.Migrations
 {
     [DbContext(typeof(TeoGardenDbContext))]
-    partial class TeoGardenDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220627093842_version3")]
+    partial class version3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -104,56 +106,56 @@ namespace TeoGarden.Data.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9253),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3573),
                             Image = "1.jpg",
                             IsDeleted = false,
                             Name = "Rau",
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9254)
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3575)
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9257),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3646),
                             Image = "2.jpg",
                             IsDeleted = false,
                             Name = "Củ",
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9258)
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3647)
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9260),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3649),
                             Image = "3.jpg",
                             IsDeleted = false,
                             Name = "Quả",
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9261)
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3650)
                         },
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9263),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3651),
                             Image = "4.jpg",
                             IsDeleted = false,
                             Name = "Nấm",
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9264)
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3652)
                         },
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9308),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3654),
                             Image = "5.jpg",
                             IsDeleted = false,
                             Name = "Bông",
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9309)
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3654)
                         },
                         new
                         {
                             Id = 6,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9311),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3656),
                             Image = "6.jpg",
                             IsDeleted = false,
                             Name = "Hạt",
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9312)
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3657)
                         });
                 });
 
@@ -198,7 +200,7 @@ namespace TeoGarden.Data.Migrations
                         {
                             Id = 1,
                             Comment = "Rau tươi ngon",
-                            FeedbackTime = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9502),
+                            FeedbackTime = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3803),
                             IsDeleted = false,
                             UserId = 1,
                             VegetableId = 18,
@@ -208,7 +210,7 @@ namespace TeoGarden.Data.Migrations
                         {
                             Id = 2,
                             Comment = "Rau héo",
-                            FeedbackTime = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9504),
+                            FeedbackTime = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3806),
                             IsDeleted = false,
                             UserId = 1,
                             VegetableId = 31,
@@ -218,7 +220,7 @@ namespace TeoGarden.Data.Migrations
                         {
                             Id = 3,
                             Comment = "Rau tươi quá",
-                            FeedbackTime = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9506),
+                            FeedbackTime = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3808),
                             IsDeleted = false,
                             UserId = 2,
                             VegetableId = 24,
@@ -228,7 +230,7 @@ namespace TeoGarden.Data.Migrations
                         {
                             Id = 4,
                             Comment = "Rau không tươi",
-                            FeedbackTime = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9508),
+                            FeedbackTime = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3810),
                             IsDeleted = false,
                             UserId = 2,
                             VegetableId = 40,
@@ -268,32 +270,32 @@ namespace TeoGarden.Data.Migrations
                         new
                         {
                             Id = 1,
-                            DeliveryTime = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9414),
-                            OrderTime = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9413),
+                            DeliveryTime = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3736),
+                            OrderTime = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3734),
                             StatusId = 1,
                             UserId = 1
                         },
                         new
                         {
                             Id = 2,
-                            DeliveryTime = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9418),
-                            OrderTime = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9416),
+                            DeliveryTime = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3739),
+                            OrderTime = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3738),
                             StatusId = 2,
                             UserId = 1
                         },
                         new
                         {
                             Id = 3,
-                            DeliveryTime = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9421),
-                            OrderTime = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9420),
+                            DeliveryTime = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3741),
+                            OrderTime = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3740),
                             StatusId = 3,
                             UserId = 1
                         },
                         new
                         {
                             Id = 4,
-                            DeliveryTime = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9423),
-                            OrderTime = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9422),
+                            DeliveryTime = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3743),
+                            OrderTime = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3742),
                             StatusId = 1,
                             UserId = 2
                         });
@@ -438,11 +440,6 @@ namespace TeoGarden.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsAdmin")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(false);
-
                     b.Property<bool>("IsBlocked")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
@@ -462,6 +459,11 @@ namespace TeoGarden.Data.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
+                    b.Property<int>("Role")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
+
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
 
@@ -475,42 +477,42 @@ namespace TeoGarden.Data.Migrations
                             Id = 1,
                             Address = "Cộng Hòa, Q.Tân Bình, TP.HCM",
                             Avatar = "lam.jpg",
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9345),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3681),
                             Email = "lam@gmail.com",
-                            IsAdmin = false,
                             IsBlocked = false,
                             Name = "Nguyễn Tùng Lâm",
                             Password = "12345",
                             Phone = "0338307449",
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9346)
+                            Role = 0,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3682)
                         },
                         new
                         {
                             Id = 2,
                             Address = "Phan Đăng Lưu, Q.Phú Nhuận, TP.HCM",
                             Avatar = "an.jpg",
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9350),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3685),
                             Email = "an@gmail.com",
-                            IsAdmin = false,
                             IsBlocked = false,
                             Name = "Nguyễn Văn An",
                             Password = "12345",
                             Phone = "0338307449",
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9351)
+                            Role = 0,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3686)
                         },
                         new
                         {
                             Id = 3,
                             Address = "Califonia, Hoa Kỳ",
                             Avatar = "admin.jpg",
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9353),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3688),
                             Email = "admin@gmail.com",
-                            IsAdmin = true,
                             IsBlocked = false,
-                            Name = "John",
+                            Name = "Jonson Admin",
                             Password = "12345",
                             Phone = "0338307449",
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9354)
+                            Role = 1,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3689)
                         });
                 });
 
@@ -537,11 +539,6 @@ namespace TeoGarden.Data.Migrations
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
 
-                    b.Property<bool>("IsSale")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(false);
-
                     b.Property<string>("Location")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -553,6 +550,11 @@ namespace TeoGarden.Data.Migrations
 
                     b.Property<int>("Price")
                         .HasColumnType("int");
+
+                    b.Property<bool>("Sale")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
@@ -571,560 +573,560 @@ namespace TeoGarden.Data.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8919),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3294),
                             Image = "1.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Bạc hà",
                             Price = 10000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8936),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3309),
                             Weight = 500
                         },
                         new
                         {
                             Id = 2,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8938),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3311),
                             Image = "2.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Bắp cải tím",
                             Price = 15000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8939),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3312),
                             Weight = 500
                         },
                         new
                         {
                             Id = 3,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8941),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3314),
                             Image = "3.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Bắp cải trắng",
                             Price = 15000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8942),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3315),
                             Weight = 500
                         },
                         new
                         {
                             Id = 4,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8943),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3317),
                             Image = "4.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Bắp chuối bào",
                             Price = 10000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8944),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3318),
                             Weight = 500
                         },
                         new
                         {
                             Id = 5,
                             CategoryId = 3,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8947),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3320),
                             Image = "5.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Bắp non",
                             Price = 25000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8948),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3321),
                             Weight = 500
                         },
                         new
                         {
                             Id = 6,
                             CategoryId = 3,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8949),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3323),
                             Image = "6.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Bầu",
                             Price = 10000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8950),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3324),
                             Weight = 500
                         },
                         new
                         {
                             Id = 7,
                             CategoryId = 3,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8952),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3326),
                             Image = "8.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Bí đao",
                             Price = 8000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8953),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3327),
                             Weight = 500
                         },
                         new
                         {
                             Id = 8,
                             CategoryId = 3,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8954),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3329),
                             Image = "8.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Bí đỏ",
                             Price = 10000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8955),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3329),
                             Weight = 500
                         },
                         new
                         {
                             Id = 9,
                             CategoryId = 3,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8957),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3331),
                             Image = "9.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Bí ngòi",
                             Price = 10000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8958),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3332),
                             Weight = 500
                         },
                         new
                         {
                             Id = 10,
                             CategoryId = 5,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8959),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3334),
                             Image = "10.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Bông bí",
                             Price = 10000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8960),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3334),
                             Weight = 500
                         },
                         new
                         {
                             Id = 11,
                             CategoryId = 5,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8962),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3336),
                             Image = "11.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Bông hẹ",
                             Price = 10000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8962),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3337),
                             Weight = 500
                         },
                         new
                         {
                             Id = 12,
                             CategoryId = 5,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8964),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3339),
                             Image = "12.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Bông so đũa",
                             Price = 10000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8965),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3340),
                             Weight = 500
                         },
                         new
                         {
                             Id = 13,
                             CategoryId = 5,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8967),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3341),
                             Image = "13.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Bông thiên lý",
                             Price = 10000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8967),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3342),
                             Weight = 500
                         },
                         new
                         {
                             Id = 14,
                             CategoryId = 3,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8969),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3344),
                             Image = "14.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Cà chua",
                             Price = 10000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8970),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3345),
                             Weight = 500
                         },
                         new
                         {
                             Id = 15,
                             CategoryId = 3,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8973),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3346),
                             Image = "15.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Cà pháo",
                             Price = 10000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8973),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3347),
                             Weight = 500
                         },
                         new
                         {
                             Id = 16,
                             CategoryId = 2,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8975),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3349),
                             Image = "6.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Cà rốt",
                             Price = 10000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8976),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3350),
                             Weight = 500
                         },
                         new
                         {
                             Id = 17,
                             CategoryId = 3,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8978),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3352),
                             Image = "17.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Cà tím",
                             Price = 10000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8978),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3353),
                             Weight = 500
                         },
                         new
                         {
                             Id = 18,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8980),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3354),
                             Image = "18.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Cải bẹ dưa",
                             Price = 5000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8981),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3355),
                             Weight = 500
                         },
                         new
                         {
                             Id = 19,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8983),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3357),
                             Image = "19.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Cải bẹ dún",
                             Price = 5000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8983),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3358),
                             Weight = 500
                         },
                         new
                         {
                             Id = 20,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8985),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3359),
                             Image = "20.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Cải bẹ xanh",
                             Price = 5000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8986),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3360),
                             Weight = 500
                         },
                         new
                         {
                             Id = 21,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8988),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3362),
                             Image = "21.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Cải bó xôi",
                             Price = 15000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8988),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3363),
                             Weight = 500
                         },
                         new
                         {
                             Id = 22,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8990),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3365),
                             Image = "22.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Cải ngọt",
                             Price = 5000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8991),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3366),
                             Weight = 500
                         },
                         new
                         {
                             Id = 23,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8993),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3367),
                             Image = "23.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Cải thảo",
                             Price = 10000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8993),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3368),
                             Weight = 500
                         },
                         new
                         {
                             Id = 24,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8995),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3370),
                             Image = "24.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Cải xà lách",
                             Price = 10000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8996),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3371),
                             Weight = 500
                         },
                         new
                         {
                             Id = 25,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(8999),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3373),
                             Image = "25.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Xà lách tím",
                             Price = 10000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9000),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3373),
                             Weight = 500
                         },
                         new
                         {
                             Id = 26,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9001),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3375),
                             Image = "26.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Xà lách xoang",
                             Price = 10000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9002),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3376),
                             Weight = 500
                         },
                         new
                         {
                             Id = 27,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9004),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3378),
                             Image = "27.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Xà lách lụa",
                             Price = 10000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9004),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3380),
                             Weight = 500
                         },
                         new
                         {
                             Id = 28,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9006),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3381),
                             Image = "28.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Cần dày lá",
                             Price = 10000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9007),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3382),
                             Weight = 500
                         },
                         new
                         {
                             Id = 29,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9009),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3384),
                             Image = "29.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Cần tây",
                             Price = 10000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9010),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3385),
                             Weight = 500
                         },
                         new
                         {
                             Id = 30,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9011),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3387),
                             Image = "30.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Cần ô",
                             Price = 10000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9012),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3388),
                             Weight = 500
                         },
                         new
                         {
                             Id = 31,
                             CategoryId = 3,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9053),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3389),
                             Image = "31.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Chanh",
                             Price = 20000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9054),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3390),
                             Weight = 500
                         },
                         new
                         {
                             Id = 32,
                             CategoryId = 2,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9056),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3392),
                             Image = "32.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Củ cải trắng",
                             Price = 10000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9057),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3393),
                             Weight = 500
                         },
                         new
                         {
                             Id = 33,
                             CategoryId = 2,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9058),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3395),
                             Image = "33.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Củ dền",
                             Price = 10000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9059),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3395),
                             Weight = 500
                         },
                         new
                         {
                             Id = 34,
                             CategoryId = 3,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9061),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3397),
                             Image = "34.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Đậu bắp",
                             Price = 10000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9062),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3398),
                             Weight = 500
                         },
                         new
                         {
                             Id = 35,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9063),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3400),
                             Image = "35.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Đậu đũa",
                             Price = 10000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9064),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3401),
                             Weight = 500
                         },
                         new
                         {
                             Id = 36,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9066),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3403),
                             Image = "36.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Đậu Hà Lan",
                             Price = 10000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9066),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3404),
                             Weight = 500
                         },
                         new
                         {
                             Id = 37,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9068),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3405),
                             Image = "37.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Đậu que",
                             Price = 10000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9069),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3406),
                             Weight = 500
                         },
                         new
                         {
                             Id = 38,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9070),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3408),
                             Image = "38.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Đậu rồng",
                             Price = 10000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9071),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3409),
                             Weight = 500
                         },
                         new
                         {
                             Id = 39,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9073),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3411),
                             Image = "39.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Đậu ván",
                             Price = 10000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9073),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3411),
                             Weight = 500
                         },
                         new
                         {
                             Id = 40,
                             CategoryId = 3,
-                            CreatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9075),
+                            CreatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3413),
                             Image = "40.jpg",
                             IsDeleted = false,
-                            IsSale = false,
                             Location = "Tổng công ty rau quả nông sản, cánh đồng nông sản sạch, xã Hòa Bình, huyện Trà Ôn, tỉnh Vĩnh Long",
                             Name = "Dưa gan",
                             Price = 10000,
-                            UpdatedDate = new DateTime(2022, 6, 27, 17, 7, 44, 294, DateTimeKind.Local).AddTicks(9076),
+                            Sale = false,
+                            UpdatedDate = new DateTime(2022, 6, 27, 16, 38, 41, 94, DateTimeKind.Local).AddTicks(3414),
                             Weight = 500
                         });
                 });

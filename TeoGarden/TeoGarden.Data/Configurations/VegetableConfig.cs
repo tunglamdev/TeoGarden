@@ -17,8 +17,11 @@ namespace TeoGarden.Data.Configurations
             builder.Property(x => x.Price).IsRequired();
             builder.Property(x => x.Weight).IsRequired();
             builder.Property(x => x.Image).IsRequired();
-            builder.Property(x => x.Sale).HasDefaultValue(0);
-            builder.Property(x => x.Location).IsRequired();
+            builder.Property(x => x.IsSale).HasDefaultValue(false);
+            builder.Property(x => x.Location).IsRequired(); 
+            builder.Property(x => x.CreatedDate).IsRequired(false);
+            builder.Property(x => x.UpdatedDate).IsRequired(false);
+            builder.Property(x => x.IsDeleted).HasDefaultValue(false);
         }
     }
 }

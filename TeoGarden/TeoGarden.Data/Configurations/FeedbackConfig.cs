@@ -16,6 +16,7 @@ namespace TeoGarden.Data.Configurations
             builder.Property(x => x.Comment).IsRequired(false);
             builder.Property(x => x.Vote).IsRequired();
             builder.Property(x => x.FeedbackTime).IsRequired(false);
+            builder.Property(x => x.IsDeleted).HasDefaultValue(false);
         }
     }
 }

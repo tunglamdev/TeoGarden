@@ -13,12 +13,12 @@ namespace TeoGarden.Data.Extensions
         public static void FillDataCategory(this ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Category>().HasData(
-                new Category(){ Id = 1,     Name = "Rau",   Image = "1.jpg" },
-                new Category(){ Id = 2,     Name = "Củ",    Image = "2.jpg" },
-                new Category(){ Id = 3,     Name = "Quả",   Image = "3.jpg" },
-                new Category(){ Id = 4,     Name = "Nấm",   Image = "4.jpg" },
-                new Category(){ Id = 5,     Name = "Bông",  Image = "5.jpg" },
-                new Category(){ Id = 6,     Name = "Hạt",   Image = "6.jpg" }
+                new Category(){ Id = 1,     Name = "Rau",   Image = "1.jpg", CreatedDate = DateTime.Now, UpdatedDate = DateTime.Now },
+                new Category(){ Id = 2,     Name = "Củ",    Image = "2.jpg", CreatedDate = DateTime.Now, UpdatedDate = DateTime.Now },
+                new Category(){ Id = 3,     Name = "Quả",   Image = "3.jpg", CreatedDate = DateTime.Now, UpdatedDate = DateTime.Now },
+                new Category(){ Id = 4,     Name = "Nấm",   Image = "4.jpg", CreatedDate = DateTime.Now, UpdatedDate = DateTime.Now },
+                new Category(){ Id = 5,     Name = "Bông",  Image = "5.jpg", CreatedDate = DateTime.Now, UpdatedDate = DateTime.Now },
+                new Category(){ Id = 6,     Name = "Hạt",   Image = "6.jpg", CreatedDate = DateTime.Now, UpdatedDate = DateTime.Now }
             );
         }
     }
