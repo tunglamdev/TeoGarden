@@ -34,9 +34,9 @@ namespace TeoGarden.BackendApi.Controllers
 
         [HttpGet("Phone")]
         [AllowAnonymous]
-        public async Task<IActionResult> GetByPhoneNumber(int Phone)
+        public async Task<IActionResult> GetByPhoneNumber(string Phone)
         {
-            var user = await _userService.GetByIdAsync(Phone);
+            var user = await _userService.GetByPhoneNumberAsync(Phone);
             return Ok(user);
         }
     }

@@ -16,6 +16,6 @@ namespace TeoGarden.Application.Interfaces
         Task<List<FeedbackViewModel>> GetByVegetableIdAsync(int Id);
         Task<int> CreateAsync(FeedbackCreateRequest request);
         Task<int> UpdateAsync(FeedbackUpdateRequest request);
-        Task<int> DeleteAsync(int Id);
+        //Task<int> DeleteAsync(int Id);
     }
 }
