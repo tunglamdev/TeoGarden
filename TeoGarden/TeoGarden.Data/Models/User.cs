@@ -17,7 +17,7 @@ namespace TeoGarden.Data.Models
         public bool IsAdmin { get; set; }
         public string Password { get; set; }
         public List<Order> Orders { get; set; }
-        public DateTime? CreatedDate { get; set; }
+        public DateTime? RegisteredDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
         public bool IsBlocked { get; set; }
     }

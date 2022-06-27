@@ -19,8 +19,8 @@ namespace TeoGarden.Data.Configurations
             builder.Property(x => x.Image).IsRequired();
             builder.Property(x => x.IsSale).HasDefaultValue(false);
             builder.Property(x => x.Location).IsRequired(); 
-            builder.Property(x => x.CreatedDate).IsRequired(false);
-            builder.Property(x => x.UpdatedDate).IsRequired(false);
+            builder.Property(x => x.CreatedDate).HasDefaultValue(DateTime.Now);
+            builder.Property(x => x.UpdatedDate).HasDefaultValue(DateTime.Now);
             builder.Property(x => x.IsDeleted).HasDefaultValue(false);
         }
     }
