@@ -41,6 +41,30 @@ namespace TeoGarden.BackendApi.Controllers
             return Ok(vegetable);
         }
 
+        [HttpGet("Category/{Id}")]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetByCategory(int Id)
+        {
+            var vegetables = await _vegetableService.GetByCategoryAsync(Id);
+            if (vegetables == null)
+            {
+                return NotFound($"Can not find vegetables with category id {Id}");
+            }
+            return Ok(vegetables);
+        }
+
+        [HttpGet("Key")]
+        [AllowAnonymous]
+        public async Task<IActionResult> FindByKey(string Key)
+        {
+            var vegetables = await _vegetableService.FindByKeyAsync(Key);
+            if (vegetables == null)
+            {
+                return NotFound($"Can not find vegetables with Key {Key}");
+            }
+            return Ok(vegetables);
+        }
+
         [HttpPost]
         [AllowAnonymous]
         public async Task<IActionResult> Create([FromBody] VegetableCreateRequest request)

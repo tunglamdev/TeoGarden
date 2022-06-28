@@ -62,6 +62,61 @@ namespace TeoGarden.Application.Services
             };
         }
 
+        public async Task<List<VegetableViewModel>> GetByCategoryAsync(int Id)
+        {
+            var category = _context.Categories.Where(category => category.Id == Id && category.IsDeleted==false).FirstOrDefaultAsync();
+            if(category == null)
+            {
+                return null;
+            }
+            var vegetables = _context.Vegetables.Where(vegetable => vegetable.CategoryId==Id && vegetable.IsDeleted==false)
+                                                    .Select(vegetable => new VegetableViewModel()
+                                                    {
+                                                        Id = vegetable.Id,
+                                                        Name = vegetable.Name,
+                                                        Price = vegetable.Price,
+                                                        Weight = vegetable.Weight,
+                                                        Image = vegetable.Image,
+                                                        IsSale = vegetable.IsSale,
+                                                        Location = vegetable.Location,
+                                                        CategoryId = vegetable.CategoryId,
+                                                        CreatedDate = vegetable.CreatedDate,
+                                                        UpdatedDate = vegetable.UpdatedDate
+                                                    }).ToListAsync();
+            if (vegetables == null)
+            {
+                return null;
+            }
+            return await vegetables;
+        }
+
+        public async Task<List<VegetableViewModel>> FindByKeyAsync(string key)
+        {
+            if(key == null)
+            {
+                return null;
+            }
+            var vegetables = _context.Vegetables.Where(vegetable => vegetable.Name.Contains(key) && vegetable.IsDeleted == false)
+                                                    .Select(vegetable => new VegetableViewModel()
+                                                    {
+                                                        Id = vegetable.Id,
+                                                        Name = vegetable.Name,
+                                                        Price = vegetable.Price,
+                                                        Weight = vegetable.Weight,
+                                                        Image = vegetable.Image,
+                                                        IsSale = vegetable.IsSale,
+                                                        Location = vegetable.Location,
+                                                        CategoryId = vegetable.CategoryId,
+                                                        CreatedDate = vegetable.CreatedDate,
+                                                        UpdatedDate = vegetable.UpdatedDate
+                                                    }).ToListAsync();
+            if (vegetables == null)
+            {
+                return null;
+            }
+            return await vegetables;
+        }
+
         public async Task<int> CreateAsync(VegetableCreateRequest request)
         {
             if (request == null)
