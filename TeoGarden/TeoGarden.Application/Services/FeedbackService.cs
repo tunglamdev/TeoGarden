@@ -27,6 +27,7 @@ namespace TeoGarden.Application.Services
             {
                 Id = feedback.Id,
                 UserId = feedback.UserId,
+                UserName = feedback.User.Name,
                 VegetableId = feedback.VegetableId,
                 Comment = feedback.Comment,
                 Vote = feedback.Vote,
@@ -46,6 +47,7 @@ namespace TeoGarden.Application.Services
             {
                 Id = feedback.Id,
                 UserId = feedback.UserId,
+                UserName = feedback.User.Name,
                 VegetableId = feedback.VegetableId,
                 Comment = feedback.Comment,
                 Vote = feedback.Vote,
@@ -60,6 +62,7 @@ namespace TeoGarden.Application.Services
             {
                 Id = feedback.Id,
                 UserId = feedback.UserId,
+                UserName = feedback.User.Name,
                 VegetableId = feedback.VegetableId,
                 Comment = feedback.Comment,
                 Vote = feedback.Vote,
@@ -74,6 +77,7 @@ namespace TeoGarden.Application.Services
             {
                 Id = feedback.Id,
                 UserId = feedback.UserId,
+                UserName = feedback.User.Name,
                 VegetableId = feedback.VegetableId,
                 Comment = feedback.Comment,
                 Vote = feedback.Vote,
@@ -111,7 +115,7 @@ namespace TeoGarden.Application.Services
                 return 0;
             }
             var feedback = await _context.Feedbacks.FindAsync(request.Id);
-            if(feedback == null || feedback.IsDeleted==false)
+            if(feedback == null || feedback.IsDeleted==true)
             {
                 return 0;
             }
