@@ -36,10 +36,11 @@ namespace TeoGarden.Application.Services
         }
 
         public async Task<FeedbackViewModel> GetByIdAsync(int Id)
-        {
+        { 
             var feedback = await _context.Feedbacks.Where(feedback => feedback.Id == Id && feedback.IsDeleted == false)
-                                                    .FirstOrDefaultAsync();
-            if(feedback == null)
+                                                        .Include(feedback => feedback.User)
+                                                       .FirstOrDefaultAsync();
+            if (feedback == null)
             {
                 return null;
             }
