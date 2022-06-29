@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Refit" Version="6.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\TeoGarden.Data\TeoGarden.Data.csproj" />
     <ProjectReference Include="..\TeoGarden.ShareModel\TeoGarden.ShareModel.csproj" />
   </ItemGroup>

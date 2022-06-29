@@ -7,9 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeoGarden.Data", "TeoGarden
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeoGarden.BackendApi", "TeoGarden.BackendApi\TeoGarden.BackendApi.csproj", "{E871BA24-0802-465E-9DE3-2A9CFB21DA91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeoGarden.Application", "TeoGarden.Application\TeoGarden.Application.csproj", "{C4FC6FC9-BD5B-43BB-A706-5B1A0A6A79B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeoGarden.Application", "TeoGarden.Application\TeoGarden.Application.csproj", "{C4FC6FC9-BD5B-43BB-A706-5B1A0A6A79B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeoGarden.ShareModel", "TeoGarden.ShareModel\TeoGarden.ShareModel.csproj", "{09EB1833-53A7-495C-BAD4-CDADF383D3A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeoGarden.ShareModel", "TeoGarden.ShareModel\TeoGarden.ShareModel.csproj", "{09EB1833-53A7-495C-BAD4-CDADF383D3A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeoGarden.CustomerWebsite", "TeoGarden.CustomerWebsite\TeoGarden.CustomerWebsite.csproj", "{3CE22EDB-2AC5-49EB-9F9D-45AEE99CEEEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeoGarden.Sdk", "TeoGarden.Sdk\TeoGarden.Sdk.csproj", "{D49DC714-C8C2-410B-A666-82D1424D8DC0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{09EB1833-53A7-495C-BAD4-CDADF383D3A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09EB1833-53A7-495C-BAD4-CDADF383D3A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09EB1833-53A7-495C-BAD4-CDADF383D3A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CE22EDB-2AC5-49EB-9F9D-45AEE99CEEEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CE22EDB-2AC5-49EB-9F9D-45AEE99CEEEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CE22EDB-2AC5-49EB-9F9D-45AEE99CEEEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CE22EDB-2AC5-49EB-9F9D-45AEE99CEEEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D49DC714-C8C2-410B-A666-82D1424D8DC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D49DC714-C8C2-410B-A666-82D1424D8DC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D49DC714-C8C2-410B-A666-82D1424D8DC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D49DC714-C8C2-410B-A666-82D1424D8DC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
