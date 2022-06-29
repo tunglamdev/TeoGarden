@@ -1,0 +1,191 @@
+/* -------CSS for Slider------- */
+.slide-title{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 80px;
+    color: var(--blue);
+}
+
+.slide-price{
+    font-weight: bold;
+    font-size: 48px;
+    color: var(--green);
+}
+
+.slide-content{
+    font-style: italic;
+    font-size: 20px;
+    text-align: justify;
+    color: #666666;
+}
+
+@media only screen and (max-width: 739px){
+    .slide-title{
+        font-size: 32px;
+        
+    }
+
+    .slide-price{
+        font-size: 28px;
+    }
+
+    .slide-content{
+        font-size: 14px;
+    }
+
+    .slideshow{
+        align-items: center!important;
+    }
+}
+
+@media only screen and (min-width: 740px) and (max-width: 1024px){
+    .slide-title{
+        font-size: 36px;
+        
+    }
+
+    .slide-price{
+        font-size: 30px;
+    }
+
+    .slide-content{
+        font-size: 16px;
+    }
+}
+
+/* -------- CSS for Categories -------- */
+.sub-title{
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+    color: var(--green);
+}
+
+.title{
+    font-weight: bold;
+    font-size: 28px;
+    text-align: center;
+    color: #192A56;
+}
+
+.categories{
+    display: grid!important;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    padding-left: 180px;
+    padding-right: 180px;
+}
+
+.cate-item{
+    background-color: #fff;
+    border-radius: 10px;
+    width: 280px;
+    display: flex!important;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #fff;
+    margin: 12px 0px 12px 0;
+}
+
+.cate-item:hover{
+    border: 2px solid var(--green);
+    filter: drop-shadow(1px 1px 5px #27AE60);
+    border-radius: 10px;
+    z-index: 0;
+}
+
+.item-img{
+    width: 210px;
+    margin-top: 10px;
+}
+
+.item-name{
+    font-weight: 700;
+    font-size: 28px;
+    text-align: center;
+    color: #192A56!important;
+    margin: 0;
+    margin-top: 14px;
+}
+
+.item-des{
+    font-size: 16px;
+    text-align: center;
+    color: #666666!important;
+    margin: 0;
+    margin-bottom: 18px;
+}
+
+/* Moblie */
+@media only screen and (max-width: 740px){
+    .sub-title{
+        font-size: 18px;
+    }
+    
+    .title{
+        font-size: 20px;
+    }
+
+    .categories, .menu{
+        display: flex!important;
+        flex-direction: column;
+    }
+}
+
+/* Tablet */
+@media only screen and (min-width: 741px) and (max-width: 1024px){
+    .categories, .menu{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* --------------Menu------------- */
+.menu{
+    display: grid!important;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.star-vote{
+    display: flex;
+    justify-content: center;
+}
+
+.price-button{
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 20px 10px 20px;
+}
+
+.price{
+    color: var(--green); 
+    font-weight: 700; 
+    font-size:22px; 
+    margin-bottom:0
+}
+
+/* ------------- Comment & star rating ------------- */
+.star-rating > input{
+    display: none;
+}
+
+.star-rating label{
+    color: #666;
+    float: right;
+    padding: 2px;
+}
+.star-rating input:not(:checked) ~ label:hover,
+.star-rating input:not(:checked) ~ label:hover ~ label{
+    color: #fd4;
+    cursor:pointer;
+}
+
+.star-rating input:checked ~ label{
+    color: #fd4;
+    cursor:pointer;
+}
