@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - TeoGarden.CustomerWebsite</title>
+    <title>Teo Garden</title>
     <title>Rau Nhà Tèo Store</title>
     <link rel="shortcut icon" href="~/icon/iconLogo.png">
     <link rel="stylesheet" href="~/font/fontawesome/css/all.min.css">
@@ -28,7 +28,7 @@
             <div class="container mt-1 mb-2">
                 <div class="row d-flex justify-content-center align-items-center">
                     <div id="header-logo" class="col-xl-3 col-md-4">
-                        <a href="<?= DOCUMENT_ROOT ?>/about"><img class="w-75" src="~/icon/logo.png" alt="Logo"></a>
+                        <a asp-controller="Home"><img class="w-75" src="~/icon/logo.png" alt="Logo"></a>
                     </div>
                     <div id="header-menu" class="col-xl-4 col-xs-0 col-md-0">
                         <nav class="nav nav-pills flex-column flex-sm-row">
@@ -39,8 +39,8 @@
                     </div>
                     <div id="header-search" class="col-xl-3 col-md-7">
                         <div class="form-text">
-                            <form action="#" method="get">
-                                <input type="text" placeholder="Tìm kiếm..." name="key" id="search">
+                            <form asp-controller="products" asp-action="search" method="get">
+                                <input type="text" placeholder="Tìm kiếm..." name="Key" id="search">
                             </form>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                     <?php else: ?> *@
 
                         <div id="header-cart" class="col-xl-1 col-md-0 d-flex justify-content-end">
-                            <a href="<?= DOCUMENT_ROOT?>/cart" id="cart" class="rounded-circle text-center" style="width: 50px; height: 50px;"><i class="fas fa-shopping-cart"></i></a>
+                            <a href="#" id="cart" class="rounded-circle text-center" style="width: 50px; height: 50px;"><i class="fas fa-shopping-cart"></i></a>
                         </div>
                         <div id="menu-dropdown" class="col-xl-1 col-md-0 d-flex justify-content-end position-relative">
                             <img id="avatar" class="rounded-circle dropdown-toggle" style="width: 50px" src="~/img/users/MyAvatar.jpeg" alt="avatar">
@@ -118,18 +118,18 @@
                     <div class="footer-nav-content">
                         <h3 class="footer-nav-title">DANH MỤC</h3>
                         <p class="footer-nav-link"><a asp-controller="Home" asp-action="Index">Trang chủ</a></p>
-                        <p class="footer-nav-link"><a asp-controller="Pruducts" asp-action="Index">Sản phẩm</a></p>
+                        <p class="footer-nav-link"><a asp-controller="Products" asp-action="Index">Sản phẩm</a></p>
                         <p class="footer-nav-link"><a asp-controller="About" asp-action="Index">Giới thiệu</a></p>
                     </div>
 
                     <div class="footer-nav-content">
                         <h3 class="footer-nav-title">SẢN PHẨM</h3>
-                        <p class="footer-nav-link"><a asp-controller="Prudcuts" asp-action="Category">Rau</a></p>
-                        <p class="footer-nav-link"><a asp-controller="Prudcuts" asp-action="Category">Củ</a></p>
-                        <p class="footer-nav-link"><a asp-controller="Prudcuts" asp-action="Category">Quả</a></p>
-                        <p class="footer-nav-link"><a asp-controller="Prudcuts" asp-action="Category">Nấm</a></p>
-                        <p class="footer-nav-link"><a asp-controller="Prudcuts" asp-action="Category">Bông</a></p>
-                        <p class="footer-nav-link"><a asp-controller="Prudcuts" asp-action="Category">Hạt</a></p>
+                        <p class="footer-nav-link"><a asp-controller="Products" asp-action="Category" asp-route-Id="1">Rau</a></p>
+                        <p class="footer-nav-link"><a asp-controller="Products" asp-action="Category" asp-route-Id="2">Củ</a></p>
+                        <p class="footer-nav-link"><a asp-controller="Products" asp-action="Category" asp-route-Id="3">Quả</a></p>
+                        <p class="footer-nav-link"><a asp-controller="Products" asp-action="Category" asp-route-Id="4">Nấm</a></p>
+                        <p class="footer-nav-link"><a asp-controller="Products" asp-action="Category" asp-route-Id="5">Bông</a></p>
+                        <p class="footer-nav-link"><a asp-controller="Products" asp-action="Category" asp-route-Id="6">Hạt</a></p>
                     </div>
                 </div>
             </div>
