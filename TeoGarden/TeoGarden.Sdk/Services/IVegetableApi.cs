@@ -13,7 +13,13 @@ namespace TeoGarden.Sdk.Services
         [Get("/api/Vegetables")]
         Task<List<VegetableViewModel>> GetAllAsync();
 
-        [Get("/api/Vegetables/Category/Id")]
+        [Get("/api/Vegetables/Category/{Id}")]
         Task<List<VegetableViewModel>> GetByCategoryAsync(int Id);
+
+        [Get("/api/Vegetables/{Id}")]
+        Task<VegetableViewModel> GetByIdAsync(int Id);
+
+        [Get("/api/Vegetables/Search/{Key}")]
+        Task<List<VegetableViewModel>> FindByKeyAsync(string Key);
     }
 }
