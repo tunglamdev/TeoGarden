@@ -2,10 +2,10 @@
 
 namespace TeoGarden.CustomerWebsite.Models
 {
-    public class HomeViewModel
+    public class ProductViewModel
     {
-        public List<CategoryViewModel> Categories;
         public List<VegetableViewModel> Vegetables;
         public VegetableViewModel Vegetable;
+        public string Keyword;
     }
 }
