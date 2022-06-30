@@ -29,9 +29,9 @@ namespace TeoGarden.BackendApi.Controllers
             return Ok(vegetables);
         }
 
-        [HttpGet("Id")]
+        [HttpGet("{Id}")]
         [AllowAnonymous]
-        public async Task<IActionResult> GetById(int Id)
+        public async Task<IActionResult> GetById([FromRoute]int Id)
         {
             var vegetable = await _vegetableService.GetByIdAsync(Id);
             if (vegetable == null)
@@ -43,7 +43,7 @@ namespace TeoGarden.BackendApi.Controllers
 
         [HttpGet("Category/{Id}")]
         [AllowAnonymous]
-        public async Task<IActionResult> GetByCategory(int Id)
+        public async Task<IActionResult> GetByCategory([FromRoute] int Id)
         {
             var vegetables = await _vegetableService.GetByCategoryAsync(Id);
             if (vegetables == null)
@@ -53,9 +53,9 @@ namespace TeoGarden.BackendApi.Controllers
             return Ok(vegetables);
         }
 
-        [HttpGet("Key")]
+        [HttpGet("Search/{Key}")]
         [AllowAnonymous]
-        public async Task<IActionResult> FindByKey(string Key)
+        public async Task<IActionResult> FindByKey([FromRoute] string Key)
         {
             var vegetables = await _vegetableService.FindByKeyAsync(Key);
             if (vegetables == null)

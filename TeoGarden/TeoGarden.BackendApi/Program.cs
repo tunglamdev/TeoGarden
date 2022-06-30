@@ -25,7 +25,8 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddDbContext<TeoGardenDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Default")),
+    ServiceLifetime.Transient);
 
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen(c =>
