@@ -64,12 +64,12 @@ namespace TeoGarden.Application.Services
 
         public async Task<List<VegetableViewModel>> GetByCategoryAsync(int Id)
         {
-            var category = _context.Categories.Where(category => category.Id == Id && category.IsDeleted==false).FirstOrDefaultAsync();
-            if(category == null)
+            var category = await _context.Categories.Where(category => category.Id == Id && category.IsDeleted == false).FirstOrDefaultAsync();
+            if (category == null)
             {
                 return null;
             }
-            var vegetables = _context.Vegetables.Where(vegetable => vegetable.CategoryId==Id && vegetable.IsDeleted==false)
+            var vegetables = await _context.Vegetables.Where(vegetable => vegetable.CategoryId == Id && vegetable.IsDeleted == false)
                                                     .Select(vegetable => new VegetableViewModel()
                                                     {
                                                         Id = vegetable.Id,
@@ -87,7 +87,7 @@ namespace TeoGarden.Application.Services
             {
                 return null;
             }
-            return await vegetables;
+            return vegetables;
         }
 
         public async Task<List<VegetableViewModel>> FindByKeyAsync(string key)
