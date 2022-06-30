@@ -1,0 +1,56 @@
+﻿@model ProductViewModel;
+<!-- Banner -->
+<div>
+    <img src="~/icon/product-banner-Copy.jpg" alt="banner" class="img-fluid">
+</div>
+
+<div class="wrapper pt-3" style="background-color: var(--body)!important;">
+    <div class="container d-flex flex-column align-items-center">
+        <h3 class="sub-title">Menu</h2>
+        <h2 class="title">RAU HÔM NAY TẠI NHÀ TÈO</h2>
+        <div class="cate-content container menu">
+            @foreach (var item in Model.Vegetables)
+            {
+                <div class="cate-item">
+                    <a asp-controller="products" asp-action="detail" asp-route-Id="@item.Id"><img class="item-img" src="~/img/vegetables/@item.Image" alt=""></a>
+                    <h3 class="item-name">@item.Name</h3>
+                    <div class="star-vote mt-1">
+                        @* <?php
+                            $rate = $data[$vege['id']]["rating"];
+                            $vote = floor($rate);
+                            $no_vote = floor(5-$rate);
+                            $half_vote = 5 - ($vote + $no_vote);
+                        ?>
+                        <?php for($i=1; $i <= $vote; $i++) : ?>
+                            <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                        <?php endfor; ?>
+                        <?php for($i=1; $i <= $half_vote; $i++) : ?>
+                            <i class="fas fa-star-half-alt" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                        <?php endfor; ?>
+                        <?php for($i=1; $i <= $no_vote; $i++) : ?>
+                            <i class="far fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                        <?php endfor; ?> *@
+                        <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                        <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                        <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                        <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                        <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                    </div>
+                    <div class="price-button">
+                        <p style="color: var(--green); font-weight: 700; font-size:22px; margin-bottom:0; line-height: 38px">@String.Format(System.Globalization.CultureInfo.GetCultureInfo("vi-VN"),"{0:c}",@item.Price)</p>
+                        <button onclick="#" class="btn btn-primary" style="font-size: 14px; font-weight: 700;">Thêm vào giỏ</button>
+                    </div>
+                </div>
+            }
+        </div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination mt-3">
+                <li class="page-item ps-1 pe-1"><a class="page-link" href="#"><i class="fas fa-angle-double-left"></i></a></li>
+                <li class="page-item ps-1 pe-1 active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item ps-1 pe-1"><a class="page-link" href="#">2</a></li>
+                <li class="page-item ps-1 pe-1"><a class="page-link" href="#">3</a></li>
+                <li class="page-item ps-1 pe-1"><a class="page-link" href="#"><i class="fas fa-angle-double-right"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
