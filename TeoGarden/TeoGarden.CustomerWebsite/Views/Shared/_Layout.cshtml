@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var requestedController = ViewContext.RouteData.Values["controller"].ToString();
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -10,20 +13,30 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="~/css/base.css">
     <link rel="stylesheet" href="~/css/reset.css">
-    <link rel="stylesheet" href="~/css/header.css">
-    <link rel="stylesheet" href="~/css/footer.css">
-    <link rel="stylesheet" href="~/css/guarantee.css">
-    <link rel="stylesheet" href="~/css/home.css">
-    <link rel="stylesheet" href="~/css/about.css">
-    <link rel="stylesheet" href="~/css/profile.css">
-    <link rel="stylesheet" href="~/css/cart.css">
+    @if (requestedController != "Account")
+    {
+        <link rel="stylesheet" href="~/css/header.css">
+        <link rel="stylesheet" href="~/css/footer.css">
+        <link rel="stylesheet" href="~/css/guarantee.css">
+        <link rel="stylesheet" href="~/css/home.css">
+        <link rel="stylesheet" href="~/css/about.css">
+        <link rel="stylesheet" href="~/css/profile.css">
+        <link rel="stylesheet" href="~/css/cart.css">
+    }
+    else
+    {
+        <link rel="stylesheet" href="~/css/auth.css">
+    }
+
 </head>
 <body>
     @* <!-- Hidden tag to use AJAX --> *@
     @* <p id="documentRootId" hidden><?= DOCUMENT_ROOT ?></p> *@
 
     @* Header *@
-    <header>
+    @if (requestedController != "Account")
+    {
+        <header>
         <div id="wrapper" class="wrapper position-fixed top-0">
             <div class="container mt-1 mb-2">
                 <div class="row d-flex justify-content-center align-items-center">
@@ -32,9 +45,9 @@
                     </div>
                     <div id="header-menu" class="col-xl-4 col-xs-0 col-md-0">
                         <nav class="nav nav-pills flex-column flex-sm-row">
-                            <a class="flex-sm-fill text-sm-center nav-link active" asp-controller="Home" asp-action="Index">Trang chủ</a>
-                            <a class="flex-sm-fill text-sm-center nav-link" asp-controller="Products" asp-action="Index">Sản phẩm</a>
-                            <a class="flex-sm-fill text-sm-center nav-link" asp-controller="About" asp-action="Index">Giới thiệu</a>
+                            <a class="flex-sm-fill text-sm-center nav-link @(requestedController=="Home" ? "active" : "")" asp-controller="Home" asp-action="Index">Trang chủ</a>
+                            <a class="flex-sm-fill text-sm-center nav-link @(requestedController=="Products" ? "active" : "")" asp-controller="Products" asp-action="Index">Sản phẩm</a>
+                            <a class="flex-sm-fill text-sm-center nav-link @(requestedController=="About" ? "active" : "")" asp-controller="About" asp-action="Index">Giới thiệu</a>
                         </nav>
                     </div>
                     <div id="header-search" class="col-xl-3 col-md-7">
@@ -44,131 +57,132 @@
                             </form>
                         </div>
                     </div>
-                    @* <?php if(!isset($_SESSION["user"])) : ?>
-                        <div id="header-login" class="col-xl-2 col-md-0 d-flex justify-content-end">
-                            <a class="flex-sm-fill nav-link text-end" href="<?= DOCUMENT_ROOT ?>/accounts/login">Đăng nhập</a>
-                        </div>
-                    <?php else: ?> *@
+                    <div id="header-login" class="col-xl-2 col-md-0 d-flex justify-content-end">
+                        <a class="flex-sm-fill nav-link text-end" asp-controller="Account" asp-action="Index">Đăng nhập</a>
+                    </div>
 
-                        <div id="header-cart" class="col-xl-1 col-md-0 d-flex justify-content-end">
-                            <a href="#" id="cart" class="rounded-circle text-center" style="width: 50px; height: 50px;"><i class="fas fa-shopping-cart"></i></a>
-                        </div>
-                        <div id="menu-dropdown" class="col-xl-1 col-md-0 d-flex justify-content-end position-relative">
-                            <img id="avatar" class="rounded-circle dropdown-toggle" style="width: 50px" src="~/img/users/MyAvatar.jpeg" alt="avatar">
-                            <ul id="sub-nav" class="position-absolute top-100 end-0">
-                                <li><a class="dropdown-item" asp-controller="Profile" asp-action="Index"><i class="fas fa-user me-2"></i>Cá nhân</a></li>                         
-                                <li><a class="dropdown-item" asp-controller="Accounts" asp-action="Logout"><i class="fas fa-sign-out-alt me-2"></i>Đăng xuất</a></li>                     
-                            </ul>
-                        </div>
+                    @*<div id="header-cart" class="col-xl-1 col-md-0 d-flex justify-content-end">
+                        <a href="#" id="cart" class="rounded-circle text-center" style="width: 50px; height: 50px;"><i class="fas fa-shopping-cart"></i></a>
+                    </div>
+                    <div id="menu-dropdown" class="col-xl-1 col-md-0 d-flex justify-content-end position-relative">
+                        <img id="avatar" class="rounded-circle dropdown-toggle" style="width: 50px" src="~/img/users/MyAvatar.jpeg" alt="avatar">
+                        <ul id="sub-nav" class="position-absolute top-100 end-0">
+                            <li><a class="dropdown-item" asp-controller="Profile" asp-action="Index"><i class="fas fa-user me-2"></i>Cá nhân</a></li>                         
+                            <li><a class="dropdown-item" asp-controller="Account" asp-action="Logout"><i class="fas fa-sign-out-alt me-2"></i>Đăng xuất</a></li>                     
+                        </ul>
+                    </div>*@
                     
-                    @* <?php endif; ?> *@
 
-                    <div id="btn-menu-mobile" class="header__menu-mobile col-xs-2 col-md-1 d-flex justify-content-end">
-                        <input type="checkbox" class="header__mobile-nav-btn" id="mobile-check">
-                        <label for="mobile-check" class="btn-3dot">
-                            <i class="fas fa-bars" style="color: var(--green)"></i>
-                        </label>
-                        <label for="mobile-check" class="header__overlay"></label>
-                        <div class="header__mobile-nav">
-                            <label for="mobile-check" class="header__mobile-nav-close">
-                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
+                        <div id="btn-menu-mobile" class="header__menu-mobile col-xs-2 col-md-1 d-flex justify-content-end">
+                            <input type="checkbox" class="header__mobile-nav-btn" id="mobile-check">
+                            <label for="mobile-check" class="btn-3dot">
+                                <i class="fas fa-bars" style="color: var(--green)"></i>
                             </label>
-                            <ul class="header__mobile-nav-list">
-                                <li class="header__mobile-nav-link"><a class="dropdown-item" asp-controller="Home" asp-action="Index"><i class="fas fa-home me-2"></i>Trang chủ</a></li>
-                                <li class="header__mobile-nav-link"><a class="dropdown-item" asp-controller="Products" asp-action="Index"><i class="fas fa-seedling me-2"></i>Sản phẩm</a></li>
-                                <li class="header__mobile-nav-link"><a class="dropdown-item" asp-controller="About" asp-action="Index"><i class="fas fa-address-card me-2"></i>Giới thiệu</a></li>
-                                @* <?php if(!isset($_SESSION["user"])) : ?> *@
-                                    @* <li class="header__mobile-nav-link"><a class="dropdown-item" href="<?= DOCUMENT_ROOT?>/accounts/register"><i class="fas fa-user-plus me-2"></i>Đăng ký</a></li>
-                                    <li class="header__mobile-nav-link"><a class="dropdown-item" href="<?= DOCUMENT_ROOT?>/accounts/login"><i class="fas fa-sign-in-alt me-2"></i>Đăng nhập</a></li> *@
-                                @* <?php else: ?> *@
-                                    <li class="header__mobile-nav-link"><a class="dropdown-item" asp-controller="Profile" asp-action="Index"><i class="fas fa-user me-2"></i>Cá nhân</a></li>
-                                    <li class="header__mobile-nav-link"><a class="dropdown-item" asp-controller="Carts" asp-action="Index"><i class="fas fa-cart-plus me-2"></i>Giỏ hàng</a></li>
-                                    <li class="header__mobile-nav-link"><a class="dropdown-item" asp-controller="Accounts" asp-action="Logout"><i class="fas fa-sign-out-alt me-2"></i>Đăng xuất</a></li>
-                                @* <?php endif; ?> *@
-                            </ul>
-                        </div>
-                    </div> 
+                            <label for="mobile-check" class="header__overlay"></label>
+                            <div class="header__mobile-nav">
+                                <label for="mobile-check" class="header__mobile-nav-close">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
+                                </label>
+                                <ul class="header__mobile-nav-list">
+                                    <li class="header__mobile-nav-link"><a class="dropdown-item" asp-controller="Home" asp-action="Index"><i class="fas fa-home me-2"></i>Trang chủ</a></li>
+                                    <li class="header__mobile-nav-link"><a class="dropdown-item" asp-controller="Products" asp-action="Index"><i class="fas fa-seedling me-2"></i>Sản phẩm</a></li>
+                                    <li class="header__mobile-nav-link"><a class="dropdown-item" asp-controller="About" asp-action="Index"><i class="fas fa-address-card me-2"></i>Giới thiệu</a></li>
+                                    @* <?php if(!isset($_SESSION["user"])) : ?> *@
+                                        @* <li class="header__mobile-nav-link"><a class="dropdown-item" href="<?= DOCUMENT_ROOT?>/accounts/register"><i class="fas fa-user-plus me-2"></i>Đăng ký</a></li>
+                                        <li class="header__mobile-nav-link"><a class="dropdown-item" href="<?= DOCUMENT_ROOT?>/accounts/login"><i class="fas fa-sign-in-alt me-2"></i>Đăng nhập</a></li> *@
+                                    @* <?php else: ?> *@
+                                        <li class="header__mobile-nav-link"><a class="dropdown-item" asp-controller="Profile" asp-action="Index"><i class="fas fa-user me-2"></i>Cá nhân</a></li>
+                                        <li class="header__mobile-nav-link"><a class="dropdown-item" asp-controller="Carts" asp-action="Index"><i class="fas fa-cart-plus me-2"></i>Giỏ hàng</a></li>
+                                        <li class="header__mobile-nav-link"><a class="dropdown-item" asp-controller="Accounts" asp-action="Logout"><i class="fas fa-sign-out-alt me-2"></i>Đăng xuất</a></li>
+                                    @* <?php endif; ?> *@
+                                </ul>
+                            </div>
+                        </div> 
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-    @* End header *@
+        </header>
+        @* End header *@
+    }
+    
     
     @* Content *@
     @RenderBody()
 
-    @* Footer *@
-    <div class="wrapper bg-white pt-3">
-        <div class="container">
-            <div class="footer">
-                <div class="footer-intro">
-                    <img class="footer-intro-img mb-2" src="~/icon/logo.png" alt="logo">
-                    <p class="footer-intro-content"><b class="footer-intro-content">Rau Nhà Tèo strore </b>là nơi chuyên cung cấp các loại rau củ quả sạch, không chất bảo quản, an toàn cho sức khỏe, đáp ứng nhu cầu của tất cả khách hàng. Rau Nhà Tèo store </b>hứa hẹn sẽ đem đến cho bạn bữa ăn an toàn và dinh dưỡng.</p>
-                    <p class="footer-intro-content">© 2021 Rau Nha Teo. All rights reserved.</p>
-                </div>
-                <div class="footer-nav">
-                    <div class="footer-nav-content" style="width: 40%">
-                        <h3 class="footer-nav-title">LIÊN HỆ</h3>
-                        <p class="footer-nav-link"><i class="fas fa-phone me-1"></i>0123 456 789</p>
-                        <p class="footer-nav-link"><i class="fas fa-envelope me-1"></i>raunhateo@gmail.com</p>
-                        <p class="footer-nav-link"><a href="#"><i class="fab fa-facebook-square me-1"></i>Rau Nhà Tèo store</a></p>
-                        <p class="footer-nav-link"><i class="fas fa-map-marker-alt me-1"></i>P.Xuân Khánh, Q.Ninh Kiều, Tp.Cần Thơ</p>
+    @if (requestedController != "Account")
+    {
+        @* Footer *@
+        <div class="wrapper bg-white pt-3">
+            <div class="container">
+                <div class="footer">
+                    <div class="footer-intro">
+                        <img class="footer-intro-img mb-2" src="~/icon/logo.png" alt="logo">
+                        <p class="footer-intro-content"><b class="footer-intro-content">Rau Nhà Tèo strore </b>là nơi chuyên cung cấp các loại rau củ quả sạch, không chất bảo quản, an toàn cho sức khỏe, đáp ứng nhu cầu của tất cả khách hàng. Rau Nhà Tèo store hứa hẹn sẽ đem đến cho bạn bữa ăn an toàn và dinh dưỡng.</p>
+                        <p class="footer-intro-content">© 2021 Rau Nha Teo. All rights reserved.</p>
                     </div>
+                    <div class="footer-nav">
+                        <div class="footer-nav-content" style="width: 40%">
+                            <h3 class="footer-nav-title">LIÊN HỆ</h3>
+                            <p class="footer-nav-link"><i class="fas fa-phone me-1"></i>0123 456 789</p>
+                            <p class="footer-nav-link"><i class="fas fa-envelope me-1"></i>raunhateo@gmail.com</p>
+                            <p class="footer-nav-link"><a href="#"><i class="fab fa-facebook-square me-1"></i>Rau Nhà Tèo store</a></p>
+                            <p class="footer-nav-link"><i class="fas fa-map-marker-alt me-1"></i>P.Xuân Khánh, Q.Ninh Kiều, Tp.Cần Thơ</p>
+                        </div>
 
-                    <div class="footer-nav-content">
-                        <h3 class="footer-nav-title">DANH MỤC</h3>
-                        <p class="footer-nav-link"><a asp-controller="Home" asp-action="Index">Trang chủ</a></p>
-                        <p class="footer-nav-link"><a asp-controller="Products" asp-action="Index">Sản phẩm</a></p>
-                        <p class="footer-nav-link"><a asp-controller="About" asp-action="Index">Giới thiệu</a></p>
-                    </div>
+                        <div class="footer-nav-content">
+                            <h3 class="footer-nav-title">DANH MỤC</h3>
+                            <p class="footer-nav-link"><a asp-controller="Home" asp-action="Index">Trang chủ</a></p>
+                            <p class="footer-nav-link"><a asp-controller="Products" asp-action="Index">Sản phẩm</a></p>
+                            <p class="footer-nav-link"><a asp-controller="About" asp-action="Index">Giới thiệu</a></p>
+                        </div>
 
-                    <div class="footer-nav-content">
-                        <h3 class="footer-nav-title">SẢN PHẨM</h3>
-                        <p class="footer-nav-link"><a asp-controller="Products" asp-action="Category" asp-route-Id="1">Rau</a></p>
-                        <p class="footer-nav-link"><a asp-controller="Products" asp-action="Category" asp-route-Id="2">Củ</a></p>
-                        <p class="footer-nav-link"><a asp-controller="Products" asp-action="Category" asp-route-Id="3">Quả</a></p>
-                        <p class="footer-nav-link"><a asp-controller="Products" asp-action="Category" asp-route-Id="4">Nấm</a></p>
-                        <p class="footer-nav-link"><a asp-controller="Products" asp-action="Category" asp-route-Id="5">Bông</a></p>
-                        <p class="footer-nav-link"><a asp-controller="Products" asp-action="Category" asp-route-Id="6">Hạt</a></p>
+                        <div class="footer-nav-content">
+                            <h3 class="footer-nav-title">SẢN PHẨM</h3>
+                            <p class="footer-nav-link"><a asp-controller="Products" asp-action="Category" asp-route-Id="1">Rau</a></p>
+                            <p class="footer-nav-link"><a asp-controller="Products" asp-action="Category" asp-route-Id="2">Củ</a></p>
+                            <p class="footer-nav-link"><a asp-controller="Products" asp-action="Category" asp-route-Id="3">Quả</a></p>
+                            <p class="footer-nav-link"><a asp-controller="Products" asp-action="Category" asp-route-Id="4">Nấm</a></p>
+                            <p class="footer-nav-link"><a asp-controller="Products" asp-action="Category" asp-route-Id="5">Bông</a></p>
+                            <p class="footer-nav-link"><a asp-controller="Products" asp-action="Category" asp-route-Id="6">Hạt</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    @* End footer *@
-    
-    @* <!-- Toast messsage when adding vege to cart --> *@
-    <div id="toast-yes">
-        <div id="toast-yes-img" class="img"><i class="fas fa-thumbs-up"></i></div>
-        <div id="toast-yes-desc">A notification message..</div>
-    </div>
+        @* End footer *@
+        @* <!-- Toast messsage when adding vege to cart --> *@
+        <div id="toast-yes">
+            <div id="toast-yes-img" class="img"><i class="fas fa-thumbs-up"></i></div>
+            <div id="toast-yes-desc">A notification message..</div>
+        </div>
 
-    <div id="toast-no">
-        <div id="toast-no-img" class="img"><i class="fas fa-thumbs-down"></i></div>
-        <div id="toast-no-desc">A notification message..</div>
-    </div>
+        <div id="toast-no">
+            <div id="toast-no-img" class="img"><i class="fas fa-thumbs-down"></i></div>
+            <div id="toast-no-desc">A notification message..</div>
+        </div>
 
-    @* <!-- JQuery --> *@
-    <script src="~/js/jquery.js"></script>
+        @* <!-- JQuery --> *@
+        <script src="~/js/jquery.js"></script>
 
-    @* <!-- Javascript for Bootstrap --> *@
-    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+        @* <!-- Javascript for Bootstrap --> *@
+        <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    @* <!-- JS menu bar --> *@
-    <script>
-        $(document).ready(function(){
-            $(window).scroll(function(){
-                if($(this).scrollTop()){
-                    $('header').addClass('sticky');
-                }
-                else{
-                    $('header').removeClass('sticky');
-                }
-            })
-        });
-    </script>
+        @* <!-- JS menu bar --> *@
+        <script>
+            $(document).ready(function(){
+                $(window).scroll(function(){
+                    if($(this).scrollTop()){
+                        $('header').addClass('sticky');
+                    }
+                    else{
+                        $('header').removeClass('sticky');
+                    }
+                })
+            });
+        </script>
 
-    <script src="~/js/cart.js"></script>
-    <script src="~/js/profile.js"></script>
+        <script src="~/js/cart.js"></script>
+        <script src="~/js/profile.js"></script>
+    } 
 </body>
 </html>
