@@ -110,5 +110,22 @@ namespace TeoGarden.BackendApi.Controllers
             }
             return Ok(result);
         }
+
+        [HttpPut("UpdateStar")]
+        [AllowAnonymous]
+        public async Task<IActionResult> UpdateStar([FromBody] VegetableStarUpdateRequest request)
+        {
+            var result = await _vegetableService.UpdateStarAsync(request);
+            if (result == 0)
+            {
+                return BadRequest();
+            }
+            var vegetable = await _vegetableService.GetByIdAsync(request.VegetableId);
+            if (vegetable == null)
+            {
+                return BadRequest();
+            }
+            return Ok(vegetable);
+        }
     }
 }

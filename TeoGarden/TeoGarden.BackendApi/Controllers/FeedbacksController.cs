@@ -42,9 +42,9 @@ namespace TeoGarden.BackendApi.Controllers
             return Ok(feedback);
         }
 
-        [HttpGet("GetByVegtable/{Id}")]
+        [HttpGet("GetByVegetable/{Id}")]
         [AllowAnonymous]
-        public async Task<IActionResult> GetByVegetableId(int Id)
+        public async Task<IActionResult> GetByVegetableId([FromRoute] int Id)
         {
             var feedbacks = await _feedbackService.GetByVegetableIdAsync(Id);
             if (feedbacks == null)
@@ -102,7 +102,7 @@ namespace TeoGarden.BackendApi.Controllers
 
         [HttpDelete]
         [AllowAnonymous]
-        public async Task<IActionResult> Deletee(int Id)
+        public async Task<IActionResult> Delete(int Id)
         {
             var result = await _feedbackService.DeleteAsync(Id);
             if (result == 0)
@@ -110,6 +110,14 @@ namespace TeoGarden.BackendApi.Controllers
                 return BadRequest();
             }
             return Ok(result);
+        }
+
+        [HttpGet("AverageVote/{vegetableId}")]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetAverageVote(int vegetableId)
+        {
+            var avg = await _feedbackService.GetAverageVoteAsync(vegetableId);
+            return Ok(avg);
         }
     }
 }
