@@ -98,17 +98,5 @@ namespace TeoGarden.BackendApi.Controllers
             }
             return Ok(result);
         }
-
-        //[HttpDelete]
-        //[AllowAnonymous]
-        //public async Task<IActionResult> Authenticate(UserLoginRequest request)
-        //{
-        //    var result = await _userService.LoginAsync(request);
-        //    if (result == null)
-        //    {
-        //        return BadRequest();
-        //    }
-        //    return Ok(result);
-        //}
     }
 }

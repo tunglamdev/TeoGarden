@@ -80,11 +80,6 @@ namespace TeoGarden.Application.Services
             {
                 return 0;
             }
-            var email = _context.Users.Where(user => user.Email == request.Email).FirstOrDefaultAsync();
-            if(email != null)
-            {
-                return 0;
-            }
             var user = new User()
             {
                 Name = request.Name,
@@ -132,10 +127,5 @@ namespace TeoGarden.Application.Services
             user.UpdatedDate = DateTime.Now;
             return await _context.SaveChangesAsync();
         }
-
-        //public async Task<string> LoginAsync(UserLoginRequest request)
-        //{
-        //    return "";
-        //}
     }
 }
