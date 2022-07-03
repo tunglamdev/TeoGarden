@@ -21,6 +21,7 @@ namespace TeoGarden.Data.Configurations
             builder.Property(x => x.Location).IsRequired(); 
             builder.Property(x => x.CreatedDate).HasDefaultValue(DateTime.Now);
             builder.Property(x => x.UpdatedDate).HasDefaultValue(DateTime.Now);
+            builder.Property(x => x.Stars).HasDefaultValue(0);
             builder.Property(x => x.IsDeleted).HasDefaultValue(false);
         }
     }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TeoGarden.Data.EF;
 
@@ -11,9 +12,10 @@ using TeoGarden.Data.EF;
 namespace TeoGarden.Data.Migrations
 {
     [DbContext(typeof(TeoGardenDbContext))]
-    partial class TeoGardenDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220703080347_AddStarToVegetables.version8")]
+    partial class AddStarToVegetablesversion8
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -19,6 +19,7 @@ namespace TeoGarden.Data.Models
         public string Location { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
+        public double Stars { get; set; }
         public bool IsDeleted { get; set; }
     }
 }
