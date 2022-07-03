@@ -79,6 +79,7 @@ namespace TeoGarden.Application.Services
                 Id = feedback.Id,
                 UserId = feedback.UserId,
                 UserName = feedback.User.Name,
+                Avatar = feedback.User.Avatar,
                 VegetableId = feedback.VegetableId,
                 Comment = feedback.Comment,
                 Vote = feedback.Vote,
@@ -92,6 +93,7 @@ namespace TeoGarden.Application.Services
             {
                 return 0;
             }
+            if (request.Vote == 0) request.Vote = 5;
             var feedback = new Feedback()
             {
                 UserId = request.UserId,
@@ -136,6 +138,13 @@ namespace TeoGarden.Application.Services
             }
             feedback.IsDeleted = true;
             return await _context.SaveChangesAsync();
+        }
+
+        public async Task<double> GetAverageVoteAsync(int Id)
+        {
+            var feedbacks = await _context.Feedbacks.Where(feedback => feedback.VegetableId == Id).ToListAsync();
+            var avg = feedbacks.Average(feedback => feedback.Vote);
+            return avg;
         }
     }
 }

@@ -17,5 +17,6 @@ namespace TeoGarden.Application.Interfaces
         Task<int> CreateAsync(FeedbackCreateRequest request);
         Task<int> UpdateAsync(FeedbackUpdateRequest request);
         Task<int> DeleteAsync(int Id);
+        Task<double> GetAverageVoteAsync(int Id);
     }
 }

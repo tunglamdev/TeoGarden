@@ -35,8 +35,9 @@ namespace TeoGarden.Application.Services
                 Location = vegetable.Location,
                 CategoryId = vegetable.CategoryId,
                 CreatedDate = vegetable.CreatedDate,
-                UpdatedDate = vegetable.UpdatedDate
-            }).ToListAsync();
+                UpdatedDate = vegetable.UpdatedDate,
+                Stars = vegetable.Stars
+            }).OrderByDescending(v => v.Stars).ToListAsync();
         }
 
         public async Task<VegetableViewModel> GetByIdAsync(int Id)
@@ -58,7 +59,8 @@ namespace TeoGarden.Application.Services
                 Location = vegetable.Location,
                 CategoryId = vegetable.CategoryId,
                 CreatedDate = vegetable.CreatedDate,
-                UpdatedDate = vegetable.UpdatedDate
+                UpdatedDate = vegetable.UpdatedDate,
+                Stars = vegetable.Stars
             };
         }
 
@@ -81,8 +83,9 @@ namespace TeoGarden.Application.Services
                                                         Location = vegetable.Location,
                                                         CategoryId = vegetable.CategoryId,
                                                         CreatedDate = vegetable.CreatedDate,
-                                                        UpdatedDate = vegetable.UpdatedDate
-                                                    }).ToListAsync();
+                                                        UpdatedDate = vegetable.UpdatedDate,
+                                                        Stars= vegetable.Stars
+                                                    }).OrderByDescending(v => v.Stars).ToListAsync();
             if (vegetables == null)
             {
                 return null;
@@ -108,8 +111,9 @@ namespace TeoGarden.Application.Services
                                                         Location = vegetable.Location,
                                                         CategoryId = vegetable.CategoryId,
                                                         CreatedDate = vegetable.CreatedDate,
-                                                        UpdatedDate = vegetable.UpdatedDate
-                                                    }).ToListAsync();
+                                                        UpdatedDate = vegetable.UpdatedDate,
+                                                        Stars = vegetable.Stars
+                                                    }).OrderByDescending(v => v.Stars).ToListAsync();
             if (vegetables == null)
             {
                 return null;
@@ -171,6 +175,13 @@ namespace TeoGarden.Application.Services
             }
             vegetable.IsDeleted = true;
             vegetable.UpdatedDate = DateTime.Now;
+            return await _context.SaveChangesAsync();
+        }
+
+        public async Task<int> UpdateStarAsync(VegetableStarUpdateRequest request)
+        {
+            var vegetable = await _context.Vegetables.Where(vegetable => vegetable.Id == request.VegetableId).FirstOrDefaultAsync();
+            vegetable.Stars = request.Stars;
             return await _context.SaveChangesAsync();
         }
     }

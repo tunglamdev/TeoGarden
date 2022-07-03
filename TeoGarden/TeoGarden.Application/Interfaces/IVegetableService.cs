@@ -17,5 +17,6 @@ namespace TeoGarden.Application.Interfaces
         Task<int> CreateAsync(VegetableCreateRequest request);
         Task<int> UpdateAsync(VegetableUpdateRequest request);
         Task<int> DeleteAsync(int Id);
+        Task<int> UpdateStarAsync(VegetableStarUpdateRequest request);
     }
 }
