@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TeoGarden.ShareModel.Requests.Vegetable;
 using TeoGarden.ShareModel.ViewModels;
 
 namespace TeoGarden.Sdk.Services
@@ -21,5 +22,8 @@ namespace TeoGarden.Sdk.Services
 
         [Get("/api/Vegetables/Search/{Key}")]
         Task<List<VegetableViewModel>> FindByKeyAsync(string Key);
+
+        [Put("/api/Vegetables/UpdateStar")]
+        Task<VegetableViewModel> UpdateStarAsync(VegetableStarUpdateRequest request);
     }
 }
