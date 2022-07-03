@@ -18,5 +18,6 @@ namespace TeoGarden.ShareModel.ViewModels
         public string Location { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
+        public double Stars { get; set; }
     }
 }
