@@ -13,11 +13,23 @@
         <div class="about-content mt-4 w-50 ps-5 pt-3">
             <h2 class="about-content-title">@Model.Vegetable.Name</h2>
             <div class="star-vote mt-1 justify-content-start">
-                <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
-                <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
-                <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
-                <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
-                <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                @{
+                    var vote = Math.Floor(Model.Vegetable.Stars);
+                    var no_vote = Math.Floor(5-Model.Vegetable.Stars);
+                    var half_vote = 5 - (vote + no_vote);
+                    for (var i = 1; i <= vote; i++)
+                    {
+                            <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                    }
+                    for (var i = 1; i <= half_vote; i++)
+                    {
+                            <i class="fas fa-star-half-alt" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                    }
+                    for (var i = 1; i <= no_vote; i++)
+                    {
+                            <i class="far fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                    }
+                }
             </div>
             <h5 class="slide-price">@String.Format(System.Globalization.CultureInfo.GetCultureInfo("vi-VN"),"{0:c}",@Model.Vegetable.Price)</h5>
             <p class="detail-content">Khối lượng: <b>@Model.Vegetable.Weight g</b></p>
@@ -39,23 +51,23 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-md-8">
                     <div>
-                        <form action="#" method="post">
+                        <form asp-controller="Products" asp-action="Comment" asp-route-VegetableId="@Model.Vegetable.Id" method="post">
                             <div class="d-flex flex-row add-comment-section mt-2 mb-2">
                                 <img class="img-responsive rounded-circle mr-2" src="~/img/users/MyAvatar.jpeg" width="50">
-                                <input type="text" name="comment-content" class="form-control mr-3 ms-2" style="color:black" placeholder="Thêm bình luận">
+                                <input type="text" name="Comment" class="form-control mr-3 ms-2" style="color:black" placeholder="Thêm bình luận">
                             </div>
                             <div class="d-flex flex-row add-comment-section mt-2 mb-2 justify-content-between">
                                 <div class="star-rating icons align-items-center justify-content-center">
                                     <small class="ms-5">Bạn chấm sản phẩm bao nhiêu điểm?</small>
-                                    <input type="radio" name="rate" id="rate-5" value="5">
+                                    <input type="radio" name="Vote" id="rate-5" value="5">
                                     <label for="rate-5" class="fas fa-star"></label>
-                                    <input type="radio" name="rate" id="rate-4" value="4">
+                                    <input type="radio" name="Vote" id="rate-4" value="4">
                                     <label for="rate-4" class="fas fa-star"></label>
-                                    <input type="radio" name="rate" id="rate-3" value="3">
+                                    <input type="radio" name="Vote" id="rate-3" value="3">
                                     <label for="rate-3" class="fas fa-star"></label>
-                                    <input type="radio" name="rate" id="rate-2" value="2">
+                                    <input type="radio" name="Vote" id="rate-2" value="2">
                                     <label for="rate-2" class="fas fa-star"></label>
-                                    <input type="radio" name="rate" id="rate-1" value="1">
+                                    <input type="radio" name="Vote" id="rate-1" value="1">
                                     <label for="rate-1" class="fas fa-star"></label>
                                 </div>
                                 <input class="btn btn-primary" type="submit" value="Đánh giá">
@@ -64,49 +76,41 @@
                     </div>
 
                     <div class="headings d-flex justify-content-between align-items-center mb-3">
-                        <h5>Tất cả bình luận(3) 4.5/5<i class="fa fa-star text-warning"></i></h5>
+                        <h5>Tất cả bình luận(@Model.Feedbacks.Count) @Math.Round(Model.Vegetable.Stars,1)/5<i class="fa fa-star text-warning"></i></h5>
                     </div>
-                    <div class="card p-3 mt-2">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="user d-flex flex-row align-items-center"> 
-                                <img src="~/img/users/MyAvatar.jpeg" width="30" class="user-img rounded-circle mr-2"> 
-                                <span>
-                                    <small class="font-weight-bold text-primary">Nguyễn Tùng Lâm</small> 
-                                    <small class="font-weight-bold">Rau ngon quá!!!</small>
-                                </span> 
-                            </div> 
-                            <small>3:10 30-06-2022</small>
-                        </div>
-                        <div class="action d-flex justify-content-end mt-2 align-items-center">
-                            <div class="icons align-items-center">
-                                <i class="fa fa-star text-warning"></i>
-                                <i class="fa fa-star text-warning"></i>
-                                <i class="fa fa-star text-warning"></i>
-                                <i class="fa fa-star text-warning"></i>
-                                <i class="fa fa-star text-warning"></i>  
+                    
+                    @foreach (var feedback in Model.Feedbacks)
+                    {
+                        <div class="card p-3 mt-2">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="user d-flex flex-row align-items-center"> 
+                                    <img src="~/img/users/@feedback.Avatar" width="30" class="user-img rounded-circle mr-2"> 
+                                    <span>
+                                        <small class="fw-bold ms-2">@feedback.UserName</small> 
+                                        @*<small class="font-weight-bold">@feedback.Comment</small>*@
+                                    </span> 
+                                </div> 
+                                <small>@feedback.FeedbackTime</small>
+                            </div>
+                            <div class="action d-flex justify-content-between mt-2 align-items-center">
+                                <small class="font-weight-bold ms-4">@feedback.Comment</small>
+                                 <div class="icons align-items-center">
+                                     @for (var i = 1; i <= feedback.Vote; i++)
+                                     {
+                                         <i class="fa fa-star text-warning"></i>
+                                     }
+                                     @for (var i = 1; i <= 5-feedback.Vote; i++)
+                                     {
+                                         <i class="far fa-star text-warning"></i>
+                                     }
+                                </div>
+                            </div>
+                            <div class="action d-flex justify-content-end align-items-center">
+                                <a href="#"><small class="me-3 text-primary">Chỉnh sửa</small></a>
+                                <a href="#"><small class="text-primary">Xóa</small></a>
                             </div>
                         </div>
-
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="user d-flex flex-row align-items-center"> 
-                                <img src="~/img/users/MyAvatar.jpeg" width="30" class="user-img rounded-circle mr-2"> 
-                                <span>
-                                    <small class="font-weight-bold text-primary">Nguyễn Tùng Lâm</small> 
-                                    <small class="font-weight-bold">Rau ngon quá!!!</small>
-                                </span> 
-                            </div> 
-                            <small>3:10 30-06-2022</small>
-                        </div>
-                        <div class="action d-flex justify-content-end mt-2 align-items-center">
-                            <div class="icons align-items-center">
-                                <i class="fa fa-star text-warning"></i>
-                                <i class="fa fa-star text-warning"></i>
-                                <i class="fa fa-star text-warning"></i>
-                                <i class="fa fa-star text-warning"></i>
-                                <i class="fa fa-star text-warning"></i>  
-                            </div>
-                        </div>
-                    </div>
+                    }
                 </div>
             </div>
         </div>
@@ -124,26 +128,23 @@
                     <a asp-controller="products" asp-action="detail" asp-route-Id="@item.Id"><img class="item-img" src="~/img/vegetables/@item.Image" alt=""></a>
                     <h3 class="item-name">@item.Name</h3>
                     <div class="star-vote mt-1">
-                        @* <?php
-                            $rate = $data[$vege['id']]["rating"];
-                            $vote = floor($rate);
-                            $no_vote = floor(5-$rate);
-                            $half_vote = 5 - ($vote + $no_vote);
-                        ?>
-                        <?php for($i=1; $i <= $vote; $i++) : ?>
-                            <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
-                        <?php endfor; ?>
-                        <?php for($i=1; $i <= $half_vote; $i++) : ?>
-                            <i class="fas fa-star-half-alt" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
-                        <?php endfor; ?>
-                        <?php for($i=1; $i <= $no_vote; $i++) : ?>
-                            <i class="far fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
-                        <?php endfor; ?> *@
-                        <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
-                        <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
-                        <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
-                        <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
-                        <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                        @{
+                            vote = Math.Floor(item.Stars);
+                            no_vote = Math.Floor(5-item.Stars);
+                            half_vote = 5 - (vote + no_vote);
+                            for (var i = 1; i <= vote; i++)
+                            {
+                                <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                            }
+                            for (var i = 1; i <= half_vote; i++)
+                            {
+                                <i class="fas fa-star-half-alt" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                            }
+                            for (var i = 1; i <= no_vote; i++)
+                            {
+                                <i class="far fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                            }
+                        }
                     </div>
                     <div class="price-button">
                         <p style="color: var(--green); font-weight: 700; font-size:22px; margin-bottom:0; line-height: 38px">@String.Format(System.Globalization.CultureInfo.GetCultureInfo("vi-VN"),"{0:c}",@item.Price)</p>

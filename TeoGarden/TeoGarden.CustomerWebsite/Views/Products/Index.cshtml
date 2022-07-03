@@ -16,26 +16,23 @@
                     <a asp-controller="products" asp-action="detail" asp-route-Id="@item.Id"><img class="item-img" src="~/img/vegetables/@item.Image" alt=""></a>
                     <h3 class="item-name">@item.Name</h3>
                     <div class="star-vote mt-1">
-                        @* <?php
-                            $rate = $data[$vege['id']]["rating"];
-                            $vote = floor($rate);
-                            $no_vote = floor(5-$rate);
-                            $half_vote = 5 - ($vote + $no_vote);
-                        ?>
-                        <?php for($i=1; $i <= $vote; $i++) : ?>
-                            <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
-                        <?php endfor; ?>
-                        <?php for($i=1; $i <= $half_vote; $i++) : ?>
-                            <i class="fas fa-star-half-alt" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
-                        <?php endfor; ?>
-                        <?php for($i=1; $i <= $no_vote; $i++) : ?>
-                            <i class="far fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
-                        <?php endfor; ?> *@
-                        <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
-                        <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
-                        <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
-                        <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
-                        <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                        @{
+                            var vote = Math.Floor(item.Stars);
+                            var no_vote = Math.Floor(5-item.Stars);
+                            var half_vote = 5 - (vote + no_vote);
+                            for (var i = 1; i <= vote; i++)
+                            {
+                                <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                            }
+                            for (var i = 1; i <= half_vote; i++)
+                            {
+                                <i class="fas fa-star-half-alt" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                            }
+                            for (var i = 1; i <= no_vote; i++)
+                            {
+                                <i class="far fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                            }
+                        }
                     </div>
                     <div class="price-button">
                         <p style="color: var(--green); font-weight: 700; font-size:22px; margin-bottom:0; line-height: 38px">@String.Format(System.Globalization.CultureInfo.GetCultureInfo("vi-VN"),"{0:c}",@item.Price)</p>
