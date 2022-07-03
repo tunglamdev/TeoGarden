@@ -16,5 +16,6 @@ namespace TeoGarden.Application.Interfaces
         Task<int> RegisterAsync(UserRegisterRequest request);
         Task<int> UpdateInformationAsync(UserUpdateRequest request);
         Task<int> BlockAccountAsync(int Id);
+        //Task<string> LoginAsync(UserLoginRequest request);
     }
 }
