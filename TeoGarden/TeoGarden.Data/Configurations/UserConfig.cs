@@ -18,7 +18,7 @@ namespace TeoGarden.Data.Configurations
             builder.Property(x => x.Email).IsRequired();
             builder.Property(x => x.Address).IsRequired();
             builder.Property(x => x.Avatar).HasDefaultValue("default.png");
-            builder.Property(x => x.IsAdmin).HasDefaultValue(false);
+            //builder.Property(x => x.IsAdmin).HasDefaultValue(false);
             builder.Property(x => x.Password).IsRequired();
             builder.Property(x => x.RegisteredDate).HasDefaultValue(DateTime.Now);
             builder.Property(x => x.UpdatedDate).HasDefaultValue(DateTime.Now);
