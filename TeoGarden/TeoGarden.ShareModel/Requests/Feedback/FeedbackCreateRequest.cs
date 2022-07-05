@@ -8,7 +8,7 @@ namespace TeoGarden.ShareModel.Requests.Feedback
 {
     public class FeedbackCreateRequest
     {
-        public int UserId { get; set; }
+        public Guid UserId { get; set; }
         public int VegetableId { get; set; }
         public string? Comment { get; set; }
         public int Vote { get; set; }

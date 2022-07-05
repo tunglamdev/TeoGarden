@@ -31,7 +31,7 @@ namespace TeoGarden.BackendApi.Controllers
 
         [HttpGet("Id")]
         [AllowAnonymous]
-        public async Task<IActionResult> GetById(int Id)
+        public async Task<IActionResult> GetById(Guid Id)
         {
             var user = await _userService.GetByIdAsync(Id);
             if(user == null)
@@ -53,22 +53,22 @@ namespace TeoGarden.BackendApi.Controllers
             return Ok(user);
         }
 
-        [HttpPost]
-        [AllowAnonymous]
-        public async Task<IActionResult> Register(UserRegisterRequest request)
-        {
-            var userId = await _userService.RegisterAsync(request);
-            if (userId == 0)
-            {
-                return BadRequest();
-            }
-            var user = await _userService.GetByIdAsync(userId);
-            if( user == null)
-            {
-                return BadRequest();
-            }
-            return Ok(user);
-        }
+        //[HttpPost]
+        //[AllowAnonymous]
+        //public async Task<IActionResult> Register(UserRegisterRequest request)
+        //{
+        //    var userId = await _userService.RegisterAsync(request);
+        //    if (userId == 0)
+        //    {
+        //        return BadRequest();
+        //    }
+        //    var user = await _userService.GetByIdAsync(userId);
+        //    if( user == null)
+        //    {
+        //        return BadRequest();
+        //    }
+        //    return Ok(user);
+        //}
 
         [HttpPut]
         [AllowAnonymous]
@@ -89,7 +89,7 @@ namespace TeoGarden.BackendApi.Controllers
 
         [HttpDelete]
         [AllowAnonymous]
-        public async Task<IActionResult> Block(int Id)
+        public async Task<IActionResult> Block(Guid Id)
         {
             var result = await _userService.BlockAccountAsync(Id);
             if (result == 0)

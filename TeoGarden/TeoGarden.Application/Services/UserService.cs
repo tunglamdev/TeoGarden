@@ -34,7 +34,7 @@ namespace TeoGarden.Application.Services
             }).ToListAsync();
         }
 
-        public async Task<UserViewModel> GetByIdAsync(int Id)
+        public async Task<UserViewModel> GetByIdAsync(Guid Id)
         {
             var user = await _context.Users.Where(user => user.Id == Id && user.IsBlocked == false).FirstOrDefaultAsync();
             if(user == null)
@@ -74,28 +74,28 @@ namespace TeoGarden.Application.Services
             };
         }
 
-        public async Task<int> RegisterAsync(UserRegisterRequest request)
-        {
-            if (request == null)
-            {
-                return 0;
-            }
-            var user = new User()
-            {
-                Name = request.Name,
-                Email = request.Email,
-                Phone = request.Phone,
-                Address = request.Address,
-                Password = request.Password
-            };
-            await _context.Users.AddAsync(user);
-            var result = await _context.SaveChangesAsync();
-            if (result == 0)
-            {
-                return 0;
-            }
-            return user.Id;
-        }
+        //public async Task<string> RegisterAsync(UserRegisterRequest request)
+        //{
+        //    if (request == null)
+        //    {
+        //        return 0;
+        //    }
+        //    var user = new User()
+        //    {
+        //        Name = request.Name,
+        //        Email = request.Email,
+        //        Phone = request.Phone,
+        //        Address = request.Address,
+        //        Password = request.Password
+        //    };
+        //    await _context.Users.AddAsync(user);
+        //    var result = await _context.SaveChangesAsync();
+        //    if (result == 0)
+        //    {
+        //        return 0;
+        //    }
+        //    return user.Id;
+        //}
 
         public async Task<int> UpdateInformationAsync(UserUpdateRequest request)
         {
@@ -116,7 +116,7 @@ namespace TeoGarden.Application.Services
             return await _context.SaveChangesAsync();
         }
 
-        public async Task<int> BlockAccountAsync(int Id)
+        public async Task<int> BlockAccountAsync(Guid Id)
         {
             var user = await _context.Users.Where(user => user.Id==Id && user.IsBlocked == false).FirstOrDefaultAsync();
             if (user == null)

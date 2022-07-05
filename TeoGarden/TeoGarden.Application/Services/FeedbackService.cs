@@ -56,7 +56,7 @@ namespace TeoGarden.Application.Services
             };
         }
 
-        public async Task<List<FeedbackViewModel>> GetByUserIdAsync(int Id)
+        public async Task<List<FeedbackViewModel>> GetByUserIdAsync(Guid Id)
         {
             return await _context.Feedbacks.Where(feedback => feedback.UserId == Id && feedback.IsDeleted == false)
                                             .Select(feedback => new FeedbackViewModel()

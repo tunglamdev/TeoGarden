@@ -55,7 +55,7 @@ namespace TeoGarden.CustomerWebsite.Controllers
         [HttpPost("{VegetableId}")]
         public async Task<IActionResult> Comment(int VegetableId, FeedbackCreateRequest Rrequest, VegetableStarUpdateRequest Urequest)
         {
-            Rrequest.UserId = 1;
+            Rrequest.UserId = new Guid("8A820ADB-93D7-4C6F-9404-BDBFC14419F4");
             _feedbackApi.CreateAsync(Rrequest).GetAwaiter().GetResult();
             Urequest.Stars = _feedbackApi.GetAverageVoteAsync(VegetableId).GetAwaiter().GetResult();
             _vegetableApi.UpdateStarAsync(Urequest).GetAwaiter().GetResult();

@@ -56,7 +56,7 @@ namespace TeoGarden.BackendApi.Controllers
 
         [HttpGet("GetByUser/{Id}")]
         [AllowAnonymous]
-        public async Task<IActionResult> GetByUserId(int Id)
+        public async Task<IActionResult> GetByUserId(Guid Id)
         {
             var feedbacks = await _feedbackService.GetByUserIdAsync(Id);
             if(feedbacks == null)

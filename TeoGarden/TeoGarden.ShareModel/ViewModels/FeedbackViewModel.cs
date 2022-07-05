@@ -10,7 +10,7 @@ namespace TeoGarden.ShareModel.ViewModels
     public class FeedbackViewModel
     {
         public int Id { get; set; }
-        public int UserId { get; set; }
+        public Guid UserId { get; set; }
         public string UserName { get; set; }
         public string Avatar { get; set; }
         public int VegetableId { get; set; }

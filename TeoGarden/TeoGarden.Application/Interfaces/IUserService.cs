@@ -11,10 +11,10 @@ namespace TeoGarden.Application.Interfaces
     public interface IUserService
     {
         Task<List<UserViewModel>> GetAllAsync();
-        Task<UserViewModel> GetByIdAsync(int Id);
+        Task<UserViewModel> GetByIdAsync(Guid Id);
         Task<UserViewModel> GetByPhoneNumberAsync(string Phone);
-        Task<int> RegisterAsync(UserRegisterRequest request);
+        //Task<int> RegisterAsync(UserRegisterRequest request);
         Task<int> UpdateInformationAsync(UserUpdateRequest request);
-        Task<int> BlockAccountAsync(int Id);
+        Task<int> BlockAccountAsync(Guid Id);
     }
 }
