@@ -22,18 +22,20 @@ namespace TeoGarden.BackendApi.Controllers
         public async Task<IActionResult> Get()
         {
             var categories = await _categoryService.GetAllAsync();
-            if(categories == null)
+            categories.ForEach(c => c.Image = String.Format("{0}://{1}{2}/images/categories/{3}", Request.Scheme, Request.Host, Request.PathBase, c.Image));
+            if (categories == null)
             {
                 return NotFound("Can't find any catgory!");
             }
             return Ok(categories);
         }
 
-        [HttpGet("Id")]
+        [HttpGet("{Id}")]
         [AllowAnonymous]
-        public async Task<IActionResult> GetById(int Id)
+        public async Task<IActionResult> GetById([FromRoute]int Id)
         {
             var category = await _categoryService.GetByIdAsync(Id);
+            category.Image = String.Format("{0}://{1}{2}/images/categories/{3}", Request.Scheme, Request.Host, Request.PathBase, category.Image);
             if (category == null)
             {
                 return NotFound($"Cannot find a category with Id: {Id}");
@@ -62,7 +64,7 @@ namespace TeoGarden.BackendApi.Controllers
         public async Task<IActionResult> Update([FromBody] CategoryUpdateRequest request)
         {
             var result = await _categoryService.UpdateAsync(request);
-            if (result == 0)
+            if (result == null)
             {
                 return BadRequest();
             }
@@ -71,12 +73,12 @@ namespace TeoGarden.BackendApi.Controllers
             {
                 return NotFound($"Cannot find category with Id: {request.Id}");
             }
-            return Ok(data);
+            return Ok(result);
         }
 
-        [HttpDelete("Id")]
+        [HttpDelete("{Id}")]
         [AllowAnonymous]
-        public async Task<IActionResult> Delete(int Id)
+        public async Task<IActionResult> Delete([FromRoute]int Id)
         {
             var result = await _categoryService.DeleteAsync(Id);
             if (result == 0)

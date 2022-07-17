@@ -15,7 +15,6 @@ namespace TeoGarden.Application.Services
     public class CategoryService : ICategoryService
     {
         private readonly TeoGardenDbContext _context;
-
         public CategoryService(TeoGardenDbContext context)
         {
             _context = context;
@@ -70,21 +69,29 @@ namespace TeoGarden.Application.Services
             return category.Id;
         }
 
-        public async Task<int> UpdateAsync(CategoryUpdateRequest request)
+        public async Task<string> UpdateAsync(CategoryUpdateRequest request)
         {
             if (request == null)
             {
-                return 0;
+                return null;
             }
             var category = await _context.Categories.FindAsync(request.Id);
             if (category == null || category.IsDeleted == true)
             {
-                return 0;
+                return null;
             }
             category.Name = request.Name;
-            category.Image = request.Image;
+            string currentImage = "";
+            if (request.Image == "");
+            else
+            {
+                currentImage = category.Image;
+                category.Image = request.Image;
+            }
             category.UpdatedDate = DateTime.Now;
-            return await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
+            if (currentImage == "") return "";
+            else return currentImage;
         }
 
         public async Task<int> DeleteAsync(int Id)
@@ -97,6 +104,16 @@ namespace TeoGarden.Application.Services
             }
             category.IsDeleted = true;
             category.UpdatedDate = DateTime.Now;
+
+            var vegetables = await _context.Vegetables.Where(vegetable => vegetable.CategoryId == Id && vegetable.IsDeleted == false)
+                                                        .ToListAsync();
+            vegetables.ForEach(vegetable =>
+            {
+                vegetable.IsDeleted = true;
+                vegetable.UpdatedDate = DateTime.Now;
+
+            });
+
             return await _context.SaveChangesAsync();
         }
     }
