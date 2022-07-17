@@ -9,7 +9,7 @@
     <h3 class="sub-title text-center" style="color: var(--bs-green)">Sản phẩm</h2>
     <h2 class="title text-center" style="color: var(--bs-primary)">THÔNG TIN SẢN PHẨM</h2>
     <div class="about">
-        <img class="about-logo w-50" src="~/img/vegetables/@Model.Vegetable.Image" alt="">
+        <img class="about-logo w-50" src="@Model.Vegetable.Image" alt="">
         <div class="about-content mt-4 w-50 ps-5 pt-3">
             <h2 class="about-content-title">@Model.Vegetable.Name</h2>
             <div class="star-vote mt-1 justify-content-start">
@@ -53,7 +53,7 @@
                     <div>
                         <form asp-controller="Products" asp-action="Comment" asp-route-VegetableId="@Model.Vegetable.Id" method="post">
                             <div class="d-flex flex-row add-comment-section mt-2 mb-2">
-                                <img class="img-responsive rounded-circle mr-2" src="~/img/users/MyAvatar.jpeg" width="50">
+                                <img class="img-responsive rounded-circle mr-2" src="~/icon/avatar.jpeg" width="50">
                                 <input type="text" name="Comment" class="form-control mr-3 ms-2" style="color:black" placeholder="Thêm bình luận">
                             </div>
                             <div class="d-flex flex-row add-comment-section mt-2 mb-2 justify-content-between">
@@ -84,7 +84,7 @@
                         <div class="card p-3 mt-2">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="user d-flex flex-row align-items-center"> 
-                                    <img src="~/img/users/@feedback.Avatar" width="30" class="user-img rounded-circle mr-2"> 
+                                    <img src="@feedback.Avatar" width="30" class="user-img rounded-circle mr-2"> 
                                     <span>
                                         <small class="fw-bold ms-2">@feedback.UserName</small> 
                                         @*<small class="font-weight-bold">@feedback.Comment</small>*@
@@ -125,7 +125,7 @@
             @foreach (var item in Model.Vegetables)
             {
                 <div class="cate-item">
-                    <a asp-controller="products" asp-action="detail" asp-route-Id="@item.Id"><img class="item-img" src="~/img/vegetables/@item.Image" alt=""></a>
+                    <a asp-controller="products" asp-action="detail" asp-route-Id="@item.Id"><img class="item-img" src="@item.Image" alt=""></a>
                     <h3 class="item-name">@item.Name</h3>
                     <div class="star-vote mt-1">
                         @{
