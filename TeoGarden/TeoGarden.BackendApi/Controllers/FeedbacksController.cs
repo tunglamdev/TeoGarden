@@ -18,6 +18,11 @@ namespace TeoGarden.BackendApi.Controllers
             _feedbackService = feedbackService;
         }
 
+        private string setImageName(string currentName)
+        {
+            return String.Format("{0}://{1}{2}/images/users/{3}", Request.Scheme, Request.Host, Request.PathBase, currentName);
+        }
+
         [HttpGet]
         [AllowAnonymous]
         public async Task<IActionResult> Get()
@@ -35,7 +40,8 @@ namespace TeoGarden.BackendApi.Controllers
         public async Task<IActionResult> Get(int Id)
         {
             var feedback = await _feedbackService.GetByIdAsync(Id);
-            if(feedback == null)
+            feedback.Avatar = setImageName(feedback.Avatar);
+            if (feedback == null)
             {
                 return NotFound($"Can not find any feedback with id {Id}");
             }
@@ -47,6 +53,7 @@ namespace TeoGarden.BackendApi.Controllers
         public async Task<IActionResult> GetByVegetableId([FromRoute] int Id)
         {
             var feedbacks = await _feedbackService.GetByVegetableIdAsync(Id);
+            feedbacks.ForEach(f => f.Avatar = setImageName(f.Avatar));
             if (feedbacks == null)
             {
                 return NotFound($"Can not find any feedback for the product {Id}");
