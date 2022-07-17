@@ -23,7 +23,7 @@ namespace TeoGarden.Application.Services
 
         public async Task<List<VegetableViewModel>> GetAllAsync()
         {
-            return await _context.Vegetables.Where(vegetable => vegetable.IsDeleted==false)
+            return await _context.Vegetables.Where(vegetable => vegetable.IsDeleted==false && vegetable.Category.IsDeleted == false)
                                             .Select(vegetable => new VegetableViewModel()
             {
                 Id = vegetable.Id,
@@ -99,7 +99,7 @@ namespace TeoGarden.Application.Services
             {
                 return null;
             }
-            var vegetables = _context.Vegetables.Where(vegetable => vegetable.Name.Contains(key) && vegetable.IsDeleted == false)
+            var vegetables = _context.Vegetables.Where(vegetable => vegetable.Name.Contains(key) && vegetable.IsDeleted == false && vegetable.Category.IsDeleted == false)
                                                     .Select(vegetable => new VegetableViewModel()
                                                     {
                                                         Id = vegetable.Id,
@@ -145,24 +145,33 @@ namespace TeoGarden.Application.Services
             return vegetable.Id;
         }
 
-        public async Task<int> UpdateAsync(VegetableUpdateRequest request)
+        public async Task<string> UpdateAsync(VegetableUpdateRequest request)
         {
             if (request == null)
             {
-                return 0;
+                return null;
             }
             var vegetable = await _context.Vegetables.FindAsync(request.Id);
             if(vegetable == null || vegetable.IsDeleted==true)
             {
-                return 0;
+                return null;
             }
             vegetable.Name = request.Name;
             vegetable.Price = request.Price;
             vegetable.Weight = request.Weight;
             vegetable.Location = request.Location;
+            string currentImage = "";
+            if (request.Image == "");
+            else
+            {
+                currentImage = vegetable.Image;
+                vegetable.Image = request.Image;
+            }
             vegetable.CategoryId = request.CategoryId;
             vegetable.UpdatedDate = DateTime.Now;
-            return await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
+            if (currentImage == "") return "";
+            else return currentImage;
         }
 
         public async Task<int> DeleteAsync(int Id)

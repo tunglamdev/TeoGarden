@@ -17,12 +17,18 @@ namespace TeoGarden.BackendApi.Controllers
             _vegetableService = vegetableService;
         }
 
+        private string setImageName(string currentName)
+        {
+            return String.Format("{0}://{1}{2}/images/vegetables/{3}", Request.Scheme, Request.Host, Request.PathBase, currentName);
+        }
+
         [HttpGet]
         [AllowAnonymous]
         public async Task<IActionResult> Get()
         {
             var vegetables = await _vegetableService.GetAllAsync();
-            if(vegetables == null)
+            vegetables.ForEach(c => c.Image = setImageName(c.Image));
+            if (vegetables == null)
             {
                 return NotFound("Vegetables can't be found!");
             }
@@ -34,6 +40,7 @@ namespace TeoGarden.BackendApi.Controllers
         public async Task<IActionResult> GetById([FromRoute]int Id)
         {
             var vegetable = await _vegetableService.GetByIdAsync(Id);
+            vegetable.Image = setImageName(vegetable.Image);
             if (vegetable == null)
             {
                 return NotFound($"Can not find vegetable with id {Id}");
@@ -46,6 +53,7 @@ namespace TeoGarden.BackendApi.Controllers
         public async Task<IActionResult> GetByCategory([FromRoute] int Id)
         {
             var vegetables = await _vegetableService.GetByCategoryAsync(Id);
+            vegetables.ForEach(c => c.Image = setImageName(c.Image));
             if (vegetables == null)
             {
                 return NotFound($"Can not find vegetables with category id {Id}");
@@ -58,6 +66,7 @@ namespace TeoGarden.BackendApi.Controllers
         public async Task<IActionResult> FindByKey([FromRoute] string Key)
         {
             var vegetables = await _vegetableService.FindByKeyAsync(Key);
+            vegetables.ForEach(c => c.Image = setImageName(c.Image));
             if (vegetables == null)
             {
                 return NotFound($"Can not find vegetables with Key {Key}");
@@ -87,7 +96,7 @@ namespace TeoGarden.BackendApi.Controllers
         public async Task<IActionResult> Update([FromBody] VegetableUpdateRequest request)
         {
             var result = await _vegetableService.UpdateAsync(request);
-            if(result == 0)
+            if(result == null)
             {
                 return BadRequest();
             }
@@ -96,14 +105,14 @@ namespace TeoGarden.BackendApi.Controllers
             {
                 return BadRequest();
             }
-            return Ok(vegetable);
+            return Ok(result);
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         [AllowAnonymous]
-        public async Task<IActionResult> Delete(int Id)
+        public async Task<IActionResult> Delete([FromRoute]int id)
         {
-            var result = await _vegetableService.DeleteAsync(Id);
+            var result = await _vegetableService.DeleteAsync(id);
             if (result == 0)
             {
                 return BadRequest();
@@ -121,6 +130,7 @@ namespace TeoGarden.BackendApi.Controllers
                 return BadRequest();
             }
             var vegetable = await _vegetableService.GetByIdAsync(request.VegetableId);
+            vegetable.Image = setImageName(vegetable.Image);
             if (vegetable == null)
             {
                 return BadRequest();
